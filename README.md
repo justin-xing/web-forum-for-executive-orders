@@ -24,4 +24,4 @@ Ensure you have Node installed. Using NVM to install it is recommended.
 ```
 node server.js
 ```
-You should see a couple messages, including 'connected!', confirming your database connection is working.
+You should see a couple messages, including 'Connected!', confirming your database connection is working.
