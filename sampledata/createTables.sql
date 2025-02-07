@@ -36,8 +36,8 @@ CREATE TABLE Comment(
     executive_order_id     INT NOT NULL,
     message                VARCHAR(5000),
     timestamp              TIMESTAMP,
-    FOREIGN KEY(uid) REFERENCES User(uid),
-    FOREIGN KEY(executive_order_id) REFERENCES Document(executive_order_id)
+    FOREIGN KEY(uid) REFERENCES User(uid) ON DELETE CASCADE,
+    FOREIGN KEY(executive_order_id) REFERENCES Document(executive_order_id) ON DELETE CASCADE
 );
 
 CREATE TABLE VoteFor(
@@ -45,6 +45,6 @@ CREATE TABLE VoteFor(
     cid                    INT NOT NULL,
     is_upvote              BOOLEAN,
     PRIMARY KEY(uid,cid),
-    FOREIGN KEY(uid) REFERENCES User(uid),
-    FOREIGN KEY(cid) REFERENCES Comment(cid)
+    FOREIGN KEY(uid) REFERENCES User(uid) ON DELETE CASCADE,
+    FOREIGN KEY(cid) REFERENCES Comment(cid) ON DELETE CASCADE
 );
