@@ -1,4 +1,4 @@
-LOAD DATA LOCAL INFILE 'basic-feature-2-3/document.csv'
+LOAD DATA LOCAL INFILE 'basic-feature-2-3/sampledata.csv'
 INTO TABLE Document
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'

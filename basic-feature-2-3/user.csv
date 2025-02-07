@@ -1,3 +1,0 @@
-uid,name,username,location,role,password_hash,email,gender,account_creation_date,date_of_birth,profile_picture_url,bio
-1,Alice,a1ic3,Waterloo,regular,1/ZV7Co3<r,alice@uwaterloo.ca,Female,2025-02-05 20:28:30,1998-07-01,,"i am alice"
-2,Bob,b0b,Toronto,regular,12m^D7dX/O,bobby@uwaterloo.ca,Male,2025-02-06 13:20:15,2002-09-16,,"i am bob"
