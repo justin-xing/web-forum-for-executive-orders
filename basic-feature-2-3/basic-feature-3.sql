@@ -1,4 +1,12 @@
-SELECT d.executive_order_id,c.message,c.upvotes,c.downvotes,(
+SELECT d.executive_order_id,c.message,(
+    SELECT COUNT(uid)
+    FROM Vote v
+    WHERE is_upvote = 1 AND v.cid = c.cid
+) AS upvotes, (
+    SELECT COUNT(uid)
+    FROM Vote v
+    WHERE is_upvote = 0 AND v.cid = c.cid
+) AS downvotes, (
     SELECT COUNT(uid)
     FROM Vote v
     WHERE is_upvote = 1 AND v.cid = c.cid
