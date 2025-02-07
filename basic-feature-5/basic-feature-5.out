@@ -1,116 +1,67 @@
-+--------------------+----------------------------------------------------------------------+-------------+------------+----------+------------------------------------------------------------------------------------------------------+--------------+------------------+--------------+
-| executive_order_id | pdf_url                                                              | citation    | start_page | end_page | title                                                                                                | signing_date | publication_date | president    |
-+--------------------+----------------------------------------------------------------------+-------------+------------+----------+------------------------------------------------------------------------------------------------------+--------------+------------------+--------------+
-|              14057 | https://www.govinfo.gov/content/pkg/FR-2021-12-13/pdf/2021-27114.pdf | 86 FR 70935 |      70935 |    70943 | Catalyzing Clean Energy Industries and Jobs Through Federal Sustainability                           | 2021-12-08   | 0000-00-00       | Joe Biden    |
-|              14058 | https://www.govinfo.gov/content/pkg/FR-2021-12-16/pdf/2021-27380.pdf | 86 FR 71357 |      71357 |    71366 | Transforming Federal Customer Experience and Service Delivery To Rebuild Trust in Government         | 2021-12-13   | 0000-00-00       | Joe Biden    |
-|              14059 | https://www.govinfo.gov/content/pkg/FR-2021-12-17/pdf/2021-27505.pdf | 86 FR 71549 |      71549 |    71553 | Imposing Sanctions on Foreign Persons Involved in the Global Illicit Drug Trade                      | 2021-12-15   | 0000-00-00       | Joe Biden    |
-|              14060 | https://www.govinfo.gov/content/pkg/FR-2021-12-20/pdf/2021-27605.pdf | 86 FR 71793 |      71793 |    71796 | Establishing the United States Council on Transnational Organized Crime                              | 2021-12-15   | 0000-00-00       | Joe Biden    |
-|              14061 | https://www.govinfo.gov/content/pkg/FR-2021-12-28/pdf/2021-28313.pdf | 86 FR 73601 |      73601 |    73613 | Adjustments of Certain Rates of Pay                                                                  | 2021-12-22   | 0000-00-00       | Joe Biden    |
-|              14062 | https://www.govinfo.gov/content/pkg/FR-2022-01-31/pdf/2022-02027.pdf | 87 FR 4763  |       4763 |     4786 | 2022 Amendments to the Manual for Courts-Martial, United States                                      | 2022-01-26   | 0000-00-00       | Joe Biden    |
-|              14063 | https://www.govinfo.gov/content/pkg/FR-2022-02-09/pdf/2022-02869.pdf | 87 FR 7363  |       7363 |     7366 | Use of Project Labor Agreements for Federal Construction Projects                                    | 2022-02-04   | 0000-00-00       | Joe Biden    |
-|              14064 | https://www.govinfo.gov/content/pkg/FR-2022-02-15/pdf/2022-03346.pdf | 87 FR 8391  |       8391 |     8393 | Protecting Certain Property of Da Afghanistan Bank for the Benefit of the People of Afghanistan      | 2022-02-11   | 0000-00-00       | Joe Biden    |
-|              14065 | https://www.govinfo.gov/content/pkg/FR-2022-02-23/pdf/2022-04020.pdf | 87 FR 10293 |      10293 |    10296 | Blocking Property of Certain Persons and Prohibiting Certain Transactions With Respect to Continued  | 2022-02-21   | 0000-00-00       | Joe Biden    |
-|              14161 | https://www.govinfo.gov/content/pkg/FR-2025-01-30/pdf/2025-02009.pdf | 90 FR 8451  |       8451 |     8453 | Protecting the United States From Foreign Terrorists and Other National Security and Public Safety T | 2025-01-20   | 0000-00-00       | Donald Trump |
-|              14162 | https://www.govinfo.gov/content/pkg/FR-2025-01-30/pdf/2025-02010.pdf | 90 FR 8455  |       8455 |     8457 | Putting America First in International Environmental Agreements                                      | 2025-01-20   | 0000-00-00       | Donald Trump |
-|              14163 | https://www.govinfo.gov/content/pkg/FR-2025-01-30/pdf/2025-02011.pdf | 90 FR 8459  |       8459 |     8461 | Realigning the United States Refugee Admissions Program                                              | 2025-01-20   | 0000-00-00       | Donald Trump |
-|              14164 | https://www.govinfo.gov/content/pkg/FR-2025-01-30/pdf/2025-02012.pdf | 90 FR 8463  |       8463 |     8465 | Restoring the Death Penalty and Protecting Public Safety                                             | 2025-01-20   | 0000-00-00       | Donald Trump |
-|              14165 | https://www.govinfo.gov/content/pkg/FR-2025-01-30/pdf/2025-02015.pdf | 90 FR 8467  |       8467 |     8469 | Securing Our Borders                                                                                 | 2025-01-20   | 0000-00-00       | Donald Trump |
-|              14166 | https://www.govinfo.gov/content/pkg/FR-2025-01-30/pdf/2025-02087.pdf | 90 FR 8611  |       8611 |     8612 | Application of Protecting Americans From Foreign Adversary Controlled Applications Act to TikTok     | 2025-01-20   | 0000-00-00       | Donald Trump |
-|              14167 | https://www.govinfo.gov/content/pkg/FR-2025-01-30/pdf/2025-02089.pdf | 90 FR 8613  |       8613 |     8614 | Clarifying the Military's Role in Protecting the Territorial Integrity of the United States          | 2025-01-20   | 0000-00-00       | Donald Trump |
-|              14169 | https://www.govinfo.gov/content/pkg/FR-2025-01-30/pdf/2025-02091.pdf | 90 FR 8619  |       8619 |     8620 | Reevaluating and Realigning United States Foreign Aid                                                | 2025-01-20   | 0000-00-00       | Donald Trump |
-|              14171 | https://www.govinfo.gov/content/pkg/FR-2025-01-31/pdf/2025-02095.pdf | 90 FR 8625  |       8625 |     8627 | Restoring Accountability to Policy-Influencing Positions Within the Federal Workforce                | 2025-01-20   | 0000-00-00       | Donald Trump |
-|              14172 | https://www.govinfo.gov/content/pkg/FR-2025-01-31/pdf/2025-02096.pdf | 90 FR 8629  |       8629 |     8631 | Restoring Names That Honor American Greatness                                                        | 2025-01-20   | 0000-00-00       | Donald Trump |
-|              14173 | https://www.govinfo.gov/content/pkg/FR-2025-01-31/pdf/2025-02097.pdf | 90 FR 8633  |       8633 |     8636 | Ending Illegal Discrimination and Restoring Merit-Based Opportunity                                  | 2025-01-21   | 0000-00-00       | Donald Trump |
-|              14174 | https://www.govinfo.gov/content/pkg/FR-2025-01-31/pdf/2025-02098.pdf | 90 FR 8637  |       8637 |     8637 | Revocation of Certain Executive Orders                                                               | 2025-01-21   | 0000-00-00       | Donald Trump |
-|              14175 | https://www.govinfo.gov/content/pkg/FR-2025-01-31/pdf/2025-02103.pdf | 90 FR 8639  |       8639 |     8640 | Designation of Ansar Allah as a Foreign Terrorist Organization                                       | 2025-01-22   | 0000-00-00       | Donald Trump |
-|              14176 | https://www.govinfo.gov/content/pkg/FR-2025-01-31/pdf/2025-02116.pdf | 90 FR 8641  |       8641 |     8642 | Declassification of Records Concerning the Assassinations of President John F. Kennedy, Senator Robe | 2025-01-23   | 0000-00-00       | Donald Trump |
-|              14177 | https://www.govinfo.gov/content/pkg/FR-2025-01-31/pdf/2025-02121.pdf | 90 FR 8643  |       8643 |     8645 | President's Council of Advisors on Science and Technology                                            | 2025-01-23   | 0000-00-00       | Donald Trump |
-|              14178 | https://www.govinfo.gov/content/pkg/FR-2025-01-31/pdf/2025-02123.pdf | 90 FR 8647  |       8647 |     8650 | Strengthening American Leadership in Digital Financial Technology                                    | 2025-01-23   | 0000-00-00       | Donald Trump |
-|              14179 | https://www.govinfo.gov/content/pkg/FR-2025-01-31/pdf/2025-02172.pdf | 90 FR 8741  |       8741 |     8742 | Removing Barriers to American Leadership in Artificial Intelligence                                  | 2025-01-23   | 0000-00-00       | Donald Trump |
-|              14180 | https://www.govinfo.gov/content/pkg/FR-2025-01-31/pdf/2025-02173.pdf | 90 FR 8743  |       8743 |     8745 | Council To Assess the Federal Emergency Management Agency                                            | 2025-01-24   | 0000-00-00       | Donald Trump |
-|              14181 | https://www.govinfo.gov/content/pkg/FR-2025-01-31/pdf/2025-02174.pdf | 90 FR 8747  |       8747 |     8750 | Emergency Measures To Provide Water Resources in California and Improve Disaster Response in Certain | 2025-01-24   | 0000-00-00       | Donald Trump |
-|              14182 | https://www.govinfo.gov/content/pkg/FR-2025-01-31/pdf/2025-02175.pdf | 90 FR 8751  |       8751 |     8752 | Enforcing the Hyde Amendment                                                                         | 2025-01-24   | 0000-00-00       | Donald Trump |
-|              14183 | https://www.govinfo.gov/content/pkg/FR-2025-02-03/pdf/2025-02178.pdf | 90 FR 8757  |       8757 |     8759 | Prioritizing Military Excellence and Readiness                                                       | 2025-01-27   | 0000-00-00       | Donald Trump |
-|              14184 | https://www.govinfo.gov/content/pkg/FR-2025-02-03/pdf/2025-02180.pdf | 90 FR 8761  |       8761 |     8762 | Reinstating Service Members Discharged Under the Military's COVID-19 Vaccination Mandate             | 2025-01-27   | 0000-00-00       | Donald Trump |
-|              14185 | https://www.govinfo.gov/content/pkg/FR-2025-02-03/pdf/2025-02181.pdf | 90 FR 8763  |       8763 |     8765 | Restoring America's Fighting Force                                                                   | 2025-01-27   | 0000-00-00       | Donald Trump |
-|              14186 | https://www.govinfo.gov/content/pkg/FR-2025-02-03/pdf/2025-02182.pdf | 90 FR 8767  |       8767 |     8769 | The Iron Dome for America                                                                            | 2025-01-27   | 0000-00-00       | Donald Trump |
-|              14187 | https://www.govinfo.gov/content/pkg/FR-2025-02-03/pdf/2025-02194.pdf | 90 FR 8771  |       8771 |     8773 | Protecting Children From Chemical and Surgical Mutilation                                            | 2025-01-28   | 0000-00-00       | Donald Trump |
-|              14188 | https://www.govinfo.gov/content/pkg/FR-2025-02-03/pdf/2025-02230.pdf | 90 FR 8847  |       8847 |     8848 | Additional Measures To Combat Anti-Semitism                                                          | 2025-01-29   | 0000-00-00       | Donald Trump |
-|              14189 | https://www.govinfo.gov/content/pkg/FR-2025-02-03/pdf/2025-02231.pdf | 90 FR 8849  |       8849 |     8851 | Celebrating America's 250th Birthday                                                                 | 2025-01-29   | 0000-00-00       | Donald Trump |
-|              14190 | https://www.govinfo.gov/content/pkg/FR-2025-02-03/pdf/2025-02232.pdf | 90 FR 8853  |       8853 |     8857 | Ending Radical Indoctrination in K-12 Schooling                                                      | 2025-01-29   | 0000-00-00       | Donald Trump |
-|              14191 | https://www.govinfo.gov/content/pkg/FR-2025-02-03/pdf/2025-02233.pdf | 90 FR 8859  |       8859 |     8860 | Expanding Educational Freedom and Opportunity for Families                                           | 2025-01-29   | 0000-00-00       | Donald Trump |
-|              14192 | https://www.govinfo.gov/content/pkg/FR-2025-02-06/pdf/2025-02345.pdf | 90 FR 9065  |       9065 |     9067 | Unleashing Prosperity Through Deregulation                                                           | 2025-01-31   | 0000-00-00       | Donald Trump |
-|              14193 | https://www.govinfo.gov/content/pkg/FR-2025-02-07/pdf/2025-02406.pdf | 90 FR 9113  |       9113 |     9116 | Imposing Duties To Address the Flow of Illicit Drugs Across Our Northern Border                      | 2025-02-01   | 0000-00-00       | Donald Trump |
-|              14194 | https://www.govinfo.gov/content/pkg/FR-2025-02-07/pdf/2025-02407.pdf | 90 FR 9117  |       9117 |     9120 | Imposing Duties To Address the Situation at Our Southern Border                                      | 2025-02-01   | 0000-00-00       | Donald Trump |
-|              14195 | https://www.govinfo.gov/content/pkg/FR-2025-02-07/pdf/2025-02408.pdf | 90 FR 9121  |       9121 |     9124 | Imposing Duties To Address the Synthetic Opioid Supply Chain in the People's Republic of China       | 2025-02-01   | 0000-00-00       | Donald Trump |
-+--------------------+----------------------------------------------------------------------+-------------+------------+----------+------------------------------------------------------------------------------------------------------+--------------+------------------+--------------+
+uid	name	username	location	role	password_hash	email	gender	account_creation_date	date_of_birth	profile_picture_url	bio
+2	Bob	b0b	Toronto	regular	12m^D7dX/O	bobby@uwaterloo.ca	Male	2025-02-06 13:20:15	2002-09-16		i am bob
+3	Carol	c4r0l	Ottawa	regular	P@ssw0rd3	carol@uwaterloo.ca	Female	2025-02-06 10:00:00	1995-04-15		i am carol
+4	Dave	d4v3	Montreal	regular	D4v3Hash!	dave@uwaterloo.ca	Male	2025-02-06 11:30:00	1990-12-01		i am dave
+5	Eve	eve	Vancouver	regular	Ev3Secure	eve@uwaterloo.ca	Female	2025-02-07 09:45:00	1992-05-22		i am eve
+6	Frank	frankie	Calgary	regular	Fr4nkHash	frank@uwaterloo.ca	Male	2025-02-07 14:15:00	1988-03-10		i am frank
+7	Grace	grace	Edmonton	regular	Gr4ceHash	grace@uwaterloo.ca	Female	2025-02-08 08:20:00	1995-11-30		i am grace
+8	Heidi	h3idi	Winnipeg	regular	H3idiHash	heidi@uwaterloo.ca	Female	2025-02-08 17:00:00	1991-02-14		i am heidi
+9	Ivan	ivan9	Quebec City	regular	Iv4nHash	ivan@uwaterloo.ca	Male	2025-02-09 12:00:00	1985-07-07		i am ivan
+10	Judy	judy	Hamilton	regular	JudySecure	judy@uwaterloo.ca	Female	2025-02-09 15:45:00	1994-08-25		i am judy
+11	Kevin	kev1n	Kitchener	regular	KevHash	kevin@uwaterloo.ca	Male	2025-02-10 09:00:00	1987-06-18		i am kevin
+12	Laura	l4ur4	London	regular	L4ur4Hash	laura@uwaterloo.ca	Female	2025-02-10 10:30:00	1993-09-10		i am laura
+13	Mike	mike	Ottawa	regular	M1k3Hash	mike@uwaterloo.ca	Male	2025-02-10 12:15:00	1990-01-20		i am mike
+14	Nina	n1na	Calgary	regular	N1naHash	nina@uwaterloo.ca	Female	2025-02-10 13:00:00	1992-03-30		i am nina
+15	Oliver	oliv3r	Toronto	regular	Ol1vHash	oliver@uwaterloo.ca	Male	2025-02-10 14:45:00	1989-11-11		i am oliver
+16	Peggy	peggy	Vancouver	regular	P3ggyHash	peggy@uwaterloo.ca	Female	2025-02-10 16:30:00	1994-04-04		i am peggy
+17	Quentin	qu3ntin	Montreal	regular	Qu3ntHash	quentin@uwaterloo.ca	Male	2025-02-10 18:00:00	1986-12-12		i am quentin
+18	Rachel	rachel	Winnipeg	regular	R4ch3lHash	rachel@uwaterloo.ca	Female	2025-02-10 19:30:00	1991-07-19		i am rachel
+19	Steve	steve	Hamilton	regular	St3veHash	steve@uwaterloo.ca	Male	2025-02-10 20:45:00	1988-10-10		i am steve
+20	Trudy	trudy	Quebec City	regular	TruDyHash	trudy@uwaterloo.ca	Female	2025-02-10 22:00:00	1995-05-05		i am trudy
 
-+-----+---------+----------+-------------+---------+---------------+----------------------+--------+-----------------------+---------------+---------------------+--------------+
-| uid | name    | username | location    | role    | password_hash | email                | gender | account_creation_date | date_of_birth | profile_picture_url | bio          |
-+-----+---------+----------+-------------+---------+---------------+----------------------+--------+-----------------------+---------------+---------------------+--------------+
-|   2 | Bob     | b0b      | Toronto     | regular | 12m^D7dX/O    | bobby@uwaterloo.ca   | Male   | 2025-02-06 13:20:15   | 2002-09-16    |                     | i am bob     |
-|   3 | Carol   | c4r0l    | Ottawa      | regular | P@ssw0rd3     | carol@uwaterloo.ca   | Female | 2025-02-06 10:00:00   | 1995-04-15    |                     | i am carol   |
-|   4 | Dave    | d4v3     | Montreal    | regular | D4v3Hash!     | dave@uwaterloo.ca    | Male   | 2025-02-06 11:30:00   | 1990-12-01    |                     | i am dave    |
-|   5 | Eve     | eve      | Vancouver   | regular | Ev3Secure     | eve@uwaterloo.ca     | Female | 2025-02-07 09:45:00   | 1992-05-22    |                     | i am eve     |
-|   6 | Frank   | frankie  | Calgary     | regular | Fr4nkHash     | frank@uwaterloo.ca   | Male   | 2025-02-07 14:15:00   | 1988-03-10    |                     | i am frank   |
-|   7 | Grace   | grace    | Edmonton    | regular | Gr4ceHash     | grace@uwaterloo.ca   | Female | 2025-02-08 08:20:00   | 1995-11-30    |                     | i am grace   |
-|   8 | Heidi   | h3idi    | Winnipeg    | regular | H3idiHash     | heidi@uwaterloo.ca   | Female | 2025-02-08 17:00:00   | 1991-02-14    |                     | i am heidi   |
-|   9 | Ivan    | ivan9    | Quebec City | regular | Iv4nHash      | ivan@uwaterloo.ca    | Male   | 2025-02-09 12:00:00   | 1985-07-07    |                     | i am ivan    |
-|  10 | Judy    | judy     | Hamilton    | regular | JudySecure    | judy@uwaterloo.ca    | Female | 2025-02-09 15:45:00   | 1994-08-25    |                     | i am judy    |
-|  11 | Kevin   | kev1n    | Kitchener   | regular | KevHash       | kevin@uwaterloo.ca   | Male   | 2025-02-10 09:00:00   | 1987-06-18    |                     | i am kevin   |
-|  12 | Laura   | l4ur4    | London      | regular | L4ur4Hash     | laura@uwaterloo.ca   | Female | 2025-02-10 10:30:00   | 1993-09-10    |                     | i am laura   |
-|  13 | Mike    | mike     | Ottawa      | regular | M1k3Hash      | mike@uwaterloo.ca    | Male   | 2025-02-10 12:15:00   | 1990-01-20    |                     | i am mike    |
-|  14 | Nina    | n1na     | Calgary     | regular | N1naHash      | nina@uwaterloo.ca    | Female | 2025-02-10 13:00:00   | 1992-03-30    |                     | i am nina    |
-|  15 | Oliver  | oliv3r   | Toronto     | regular | Ol1vHash      | oliver@uwaterloo.ca  | Male   | 2025-02-10 14:45:00   | 1989-11-11    |                     | i am oliver  |
-|  16 | Peggy   | peggy    | Vancouver   | regular | P3ggyHash     | peggy@uwaterloo.ca   | Female | 2025-02-10 16:30:00   | 1994-04-04    |                     | i am peggy   |
-|  17 | Quentin | qu3ntin  | Montreal    | regular | Qu3ntHash     | quentin@uwaterloo.ca | Male   | 2025-02-10 18:00:00   | 1986-12-12    |                     | i am quentin |
-|  18 | Rachel  | rachel   | Winnipeg    | regular | R4ch3lHash    | rachel@uwaterloo.ca  | Female | 2025-02-10 19:30:00   | 1991-07-19    |                     | i am rachel  |
-|  19 | Steve   | steve    | Hamilton    | regular | St3veHash     | steve@uwaterloo.ca   | Male   | 2025-02-10 20:45:00   | 1988-10-10    |                     | i am steve   |
-|  20 | Trudy   | trudy    | Quebec City | regular | TruDyHash     | trudy@uwaterloo.ca   | Female | 2025-02-10 22:00:00   | 1995-05-05    |                     | i am trudy   |
-+-----+---------+----------+-------------+---------+---------------+----------------------+--------+-----------------------+---------------+---------------------+--------------+
+cid	uid	executive_order_id	message	timestamp
+3	3	14195	This order will strengthen our borders.	2025-02-06 08:15:30
+4	4	14192	Deregulation is key to prosperity.	2025-02-06 09:00:00
+5	5	14184	Reinstating service members is a win.	2025-02-06 10:20:15
+6	6	14186	The Iron Dome for America sounds promising.	2025-02-06 11:45:00
+7	7	14187	Protecting children is our priority.	2025-02-06 12:30:00
+8	8	14191	Expanding educational freedom is vital.	2025-02-06 13:15:00
+9	9	14190	Ending radical indoctrination in schools is necessary.	2025-02-06 14:05:00
+10	10	14183	Military excellence should be a national focus.	2025-02-06 15:30:00
+11	11	14185	Restoring America's fighting force is commendable.	2025-02-06 16:00:00
+12	12	14065	Sanctions are necessary to protect national security.	2025-02-07 10:00:00
+13	13	14064	Protecting property for Afghan people is a bold step.	2025-02-07 10:30:00
+14	14	14063	Project labor agreements could impact construction costs.	2025-02-07 11:00:00
+15	15	14062	Amendments to the Manual for Courts-Martial seem overdue.	2025-02-07 11:30:00
+16	16	14061	Adjustments of pay rates will boost morale.	2025-02-07 12:00:00
+17	17	14060	The new council on transnational crime is a step in the right direction.	2025-02-07 12:30:00
+18	18	14059	Sanctions on drug trade participants are crucial.	2025-02-07 13:00:00
+19	19	14058	Improving federal customer service is long overdue.	2025-02-07 13:30:00
+20	20	14057	Clean energy initiatives are essential for our future.	2025-02-07 14:00:00
+69	7	14195	This order will NOT strengthen our borders.	2025-02-06 08:05:30
 
-+-----+-----+--------------------+--------------------------------------------------------------------------+---------------------+
-| cid | uid | executive_order_id | message                                                                  | timestamp           |
-+-----+-----+--------------------+--------------------------------------------------------------------------+---------------------+
-|   3 |   3 |              14195 | This order will strengthen our borders.                                  | 2025-02-06 08:15:30 |
-|   4 |   4 |              14192 | Deregulation is key to prosperity.                                       | 2025-02-06 09:00:00 |
-|   5 |   5 |              14184 | Reinstating service members is a win.                                    | 2025-02-06 10:20:15 |
-|   6 |   6 |              14186 | The Iron Dome for America sounds promising.                              | 2025-02-06 11:45:00 |
-|   7 |   7 |              14187 | Protecting children is our priority.                                     | 2025-02-06 12:30:00 |
-|   8 |   8 |              14191 | Expanding educational freedom is vital.                                  | 2025-02-06 13:15:00 |
-|   9 |   9 |              14190 | Ending radical indoctrination in schools is necessary.                   | 2025-02-06 14:05:00 |
-|  10 |  10 |              14183 | Military excellence should be a national focus.                          | 2025-02-06 15:30:00 |
-|  11 |  11 |              14185 | Restoring America's fighting force is commendable.                       | 2025-02-06 16:00:00 |
-|  12 |  12 |              14065 | Sanctions are necessary to protect national security.                    | 2025-02-07 10:00:00 |
-|  13 |  13 |              14064 | Protecting property for Afghan people is a bold step.                    | 2025-02-07 10:30:00 |
-|  14 |  14 |              14063 | Project labor agreements could impact construction costs.                | 2025-02-07 11:00:00 |
-|  15 |  15 |              14062 | Amendments to the Manual for Courts-Martial seem overdue.                | 2025-02-07 11:30:00 |
-|  16 |  16 |              14061 | Adjustments of pay rates will boost morale.                              | 2025-02-07 12:00:00 |
-|  17 |  17 |              14060 | The new council on transnational crime is a step in the right direction. | 2025-02-07 12:30:00 |
-|  18 |  18 |              14059 | Sanctions on drug trade participants are crucial.                        | 2025-02-07 13:00:00 |
-|  19 |  19 |              14058 | Improving federal customer service is long overdue.                      | 2025-02-07 13:30:00 |
-|  20 |  20 |              14057 | Clean energy initiatives are essential for our future.                   | 2025-02-07 14:00:00 |
-+-----+-----+--------------------+--------------------------------------------------------------------------+---------------------+
-
-+-----+-----+-----------+
-| uid | cid | is_upvote |
-+-----+-----+-----------+
-|   3 |   3 |         1 |
-|   4 |   4 |         1 |
-|   5 |   5 |         0 |
-|   6 |   6 |         1 |
-|   7 |   7 |         1 |
-|   8 |   8 |         0 |
-|   9 |   9 |         1 |
-|  10 |  10 |         1 |
-|  11 |  11 |         0 |
-|  12 |  12 |         1 |
-|  13 |  13 |         1 |
-|  14 |  14 |         0 |
-|  15 |  15 |         1 |
-|  16 |  16 |         1 |
-|  17 |  17 |         0 |
-|  18 |  18 |         1 |
-|  19 |  19 |         0 |
-|  20 |  20 |         1 |
-+-----+-----+-----------+
+uid	cid	is_upvote
+3	3	1
+3	69	0
+4	3	1
+4	4	1
+5	3	1
+5	5	0
+5	69	0
+6	3	1
+6	6	1
+7	7	1
+8	8	0
+8	69	0
+9	9	1
+10	10	1
+11	11	0
+12	12	1
+13	13	1
+14	14	0
+15	15	1
+16	16	1
+17	17	0
+18	18	1
+19	19	0
+20	20	1
