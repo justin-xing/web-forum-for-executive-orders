@@ -11,6 +11,9 @@ Install MySQL, and create a test database and a test table (for milestone 0):
 mysql -u root -p (or sudo mysql -u root)
 mysql> CREATE DATABASE testDB;
 mysql> USE testDB;
+mysql> SET GLOBAL local_infile=ON;
+mysql> quit;
+mysql --local-infile=1 -u root -p -D testDB
 mysql> source "**FULL PATH TO createTables.sql**"
 mysql> source "**FULL PATH TO populateTables.sql**"
 mysql> source "**FULL PATH TO outputTables.sql**"
