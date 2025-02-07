@@ -20,3 +20,27 @@ SET
                              REPLACE(@president, CHAR(13), ''),
                            CHAR(10), '')
                          );
+
+LOAD DATA LOCAL INFILE 'user.csv'
+INTO TABLE User
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+(uid,name,username,location,role,password_hash,email,gender,account_creation_date,date_of_birth,profile_picture_url,bio);
+
+LOAD DATA LOCAL INFILE 'comment.csv'
+INTO TABLE Comment
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+(cid,uid,executive_order_id,message,timestamp);
+
+LOAD DATA LOCAL INFILE 'vote.csv'
+INTO TABLE Vote
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+(uid,cid,is_upvote);
