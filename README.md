@@ -36,3 +36,7 @@ node server.js
 ```
 
 You should see a couple messages, including 'Connected!', confirming your database connection is working.
+
+## Features implemented so far
+- Retrieving comments under a specific executive order
+- Deletion of a user
