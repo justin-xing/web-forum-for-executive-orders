@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS Vote;
+DROP TABLE IF EXISTS VoteFor;
 DROP TABLE IF EXISTS Comment;
 DROP TABLE IF EXISTS User;
 DROP TABLE IF EXISTS Document;
@@ -40,7 +40,7 @@ CREATE TABLE Comment(
     FOREIGN KEY(executive_order_id) REFERENCES Document(executive_order_id)
 );
 
-CREATE TABLE Vote(
+CREATE TABLE VoteFor(
     uid                    INT NOT NULL,
     cid                    INT NOT NULL,
     is_upvote              BOOLEAN,

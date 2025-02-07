@@ -38,7 +38,7 @@ IGNORE 1 LINES
 (cid,uid,executive_order_id,message,timestamp);
 
 LOAD DATA LOCAL INFILE 'vote.csv'
-INTO TABLE Vote
+INTO TABLE VoteFor
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
