@@ -13,7 +13,7 @@ mysql> CREATE DATABASE testDB;
 mysql> USE testDB;
 mysql> source "**FULL PATH TO createTables.sql**"
 mysql> source "**FULL PATH TO populateTables.sql**"
-mysql> SELECT * FROM Document;
+mysql> source "**FULL PATH TO outputTables.sql**"
 ```
 
 Create a user you will use to connect to the database in the application:
