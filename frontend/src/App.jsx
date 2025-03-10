@@ -4,30 +4,50 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  // replace w/api request
+  const DOCUMENTS = [
+    {
+      uid: 1,
+      title: "bill 1",
+      signing_date: "YYYY-MM-DD",
+      president: "uncle sam",
+    },
+    {
+      uid: 1,
+      title: "bill 2",
+      signing_date: "YYYY-MM-DD",
+      president: "uncle sam",
+    },
+    {
+      uid: 1,
+      title: "bill 3",
+      signing_date: "YYYY-MM-DD",
+      president: "uncle sam",
+    },
+  ];
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {
+        DOCUMENTS.map((doc) => {
+          return (
+            <li>
+              <ul key={doc.uid}>
+                <div>
+                  {doc.title}
+                </div>
+                <div>
+                  {doc.signing_date}
+                </div>
+                <div>
+                  {doc.president}
+                </div>
+              </ul>
+            </li>
+          )
+        })
+      }
     </>
   )
 }
