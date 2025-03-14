@@ -4,7 +4,7 @@ import styles from "./Root.module.css";
 
 const Root = () => {
   return (
-    <div class={styles.wrapper}>
+    <div className={styles.wrapper}>
       <Header />
       <Outlet />
     </div>
