@@ -4,19 +4,19 @@ import styles from "./HomePage.module.css";
 
 const DOCUMENTS = [
   {
-    uid: 1,
+    executive_order_id: 1,
     title: "bill 1",
     signing_date: "YYYY-MM-DD",
     president: "uncle sam",
   },
   {
-    uid: 1,
+    executive_order_id: 1,
     title: "bill 2",
     signing_date: "YYYY-MM-DD",
     president: "uncle sam",
   },
   {
-    uid: 1,
+    executive_order_id: 1,
     title: "bill 3",
     signing_date: "YYYY-MM-DD",
     president: "uncle sam",
