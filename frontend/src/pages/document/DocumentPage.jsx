@@ -9,6 +9,7 @@ const DocumentPage = () => {
     title: "",
     signing_date: "",
     president: "",
+    link: "",
   });
 
   const [comments, setComments] = useState([]);
@@ -44,10 +45,13 @@ const DocumentPage = () => {
 
   return (
     <div className={styles.documentPage}>
-      <div>{executive_order_id}</div>
-      <div>{document.title}</div>
-      <div>{document.signing_date}</div>
-      <div>{document.president}</div>
+      <div>EID: {executive_order_id}</div>
+      <div>Title: {document.title}</div>
+      <div>Signing Date: {document.signing_date}</div>
+      <div>
+        PDF: <a href={document.pdf_url}>{document.pdf_url}</a>
+      </div>
+      <div>Signed By: {document.president}</div>
       <b>Comments</b>
       {Comments}
     </div>

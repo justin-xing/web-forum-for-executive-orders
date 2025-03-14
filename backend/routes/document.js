@@ -41,6 +41,7 @@ router.get("/president/:president", (req, res) => {
         message: "Could not retrieve documents",
       });
     }
+    console.log(results);
     res.status(200).send({
       documents: results,
     });
