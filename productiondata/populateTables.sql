@@ -1,4 +1,4 @@
-LOAD DATA LOCAL INFILE 'document.csv'
+LOAD DATA LOCAL INFILE 'generation/output_document.csv'
 INTO TABLE Document
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
@@ -22,7 +22,7 @@ SET
                            CHAR(10), '')
                          );
 
-LOAD DATA LOCAL INFILE 'user.csv'
+LOAD DATA LOCAL INFILE 'generation/output_user.csv'
 INTO TABLE User
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
@@ -30,7 +30,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 LINES
 (uid,name,username,location,role,password_hash,email,gender,account_creation_date,date_of_birth,profile_picture_url,bio);
 
-LOAD DATA LOCAL INFILE 'comment.csv'
+LOAD DATA LOCAL INFILE 'generation/output_comments.csv'
 INTO TABLE Comment
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
@@ -38,7 +38,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 LINES
 (cid,uid,executive_order_id,message,timestamp);
 
-LOAD DATA LOCAL INFILE 'vote.csv'
+LOAD DATA LOCAL INFILE 'generation/output_votes.csv'
 INTO TABLE VoteFor
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
