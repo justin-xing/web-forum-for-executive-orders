@@ -4,8 +4,44 @@
 
 Install MySQL, and create a test database and a test table.
 To run the sample data, `cd` into the `/sampledata` directory.
+
+```
+mysql -u root -p (or sudo mysql -u root)
+mysql> CREATE DATABASE testDB;
+mysql> USE testDB;
+mysql> SET GLOBAL local_infile=ON;
+mysql> quit;
+mysql --local-infile=1 -u root -p -D testDB
+mysql> source "**FULL PATH TO createTables.sql**"
+mysql> source "**FULL PATH TO populateTables.sql**"
+mysql> source "**FULL PATH TO outputTables.sql**"
+```
+
+Create a user you will use to connect to the database in the application:
+
+```
+mysql> CREATE USER ’apiusr’@’localhost’ IDENTIFIED BY ’password’;
+mysql> GRANT ALL ON *.* to ’apiusr’@’localhost’;
+mysql> ALTER USER ’apiusr’@’localhost’ IDENTIFIED WITH mysql_native_password BY ’password’;
+```
+
+## How to create and load the production database
+
+Install MySQL, and create a test database and a test table.
 To run the production data, `cd` into the `/productiondata` directory.
 
+### Generating CSV
+```
+cd generation
+python3 -m venv venv
+pip install -r requirements.txt
+python transform_doc.py
+python generate_user.py
+python generate_comment.py
+python generate_upvote.py
+```
+### Populating DB
+Make sure you are in the `/productiondata` and NOT `/productiondata/generation`
 ```
 mysql -u root -p (or sudo mysql -u root)
 mysql> CREATE DATABASE testDB;
