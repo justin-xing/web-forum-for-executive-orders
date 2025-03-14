@@ -44,3 +44,16 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 LINES
 (uid,cid,is_upvote);
+
+ALTER TABLE VoteFor
+  ADD INDEX idx_vote_cid_isup (cid, is_upvote);
+
+ALTER TABLE VoteFor
+  ADD INDEX idx_vote_uid_cid_up (uid, cid, is_upvote);
+
+ALTER TABLE Document
+  ADD INDEX idx_document_president_tag_date (president, tag, signing_date);
+
+ALTER TABLE Comment
+  ADD INDEX idx_comment_uid (uid),
+  ADD INDEX idx_comment_executive_order_id (executive_order_id);
