@@ -1,7 +1,8 @@
 import { Stack } from "@mui/material";
 import DocumentSummary from "../DocumentSummary/DocumentSummary";
-import styles from "./HomePage.module.css";
+import styles from "./DocumentList.module.css";
 
+// REPLACE: request query that filter documents for president
 const DOCUMENTS = [
   {
     executive_order_id: 1,
@@ -24,20 +25,20 @@ const DOCUMENTS = [
 ];
 
 // feed of documents (home is documents page)
-const HomePage = () => {
-  const DocumentList = DOCUMENTS.map((doc) => {
+const DocumentList = () => {
+  const Documents = DOCUMENTS.map((doc) => {
     return <DocumentSummary item={doc}></DocumentSummary>;
   });
   return (
-    <main class={styles.homePage}>
+    <main class={styles.documentListPage}>
       <Stack
         spacing={2}
         sx={{ justifyContent: "center", alignItems: "center" }}
       >
-        {DocumentList}
+        {Documents}
       </Stack>
     </main>
   );
 };
 
-export default HomePage;
+export default DocumentList;

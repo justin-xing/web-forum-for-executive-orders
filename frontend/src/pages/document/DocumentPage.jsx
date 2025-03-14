@@ -4,9 +4,25 @@ import { useParams } from "react-router-dom";
 const DocumentPage = () => {
   const { executive_order_id } = useParams();
 
-  // do api call using executive_order_id, render data
+  // REPLACE: do api call using executive_order_id, render data
+  // (bcuz what if user navigates to post directly, we cant use data from prev filter query (there is no prev query))
 
-  return <div class={styles.documentPage}>{executive_order_id}</div>;
+  const { title, signing_date, president } = {
+    title: "bill 1",
+    signing_date: "YYYY-MM-DD",
+    president: "uncle sam",
+  };
+
+  // REPLACE: get comments with api call using executive_order_id, render comments
+
+  return (
+    <div class={styles.documentPage}>
+      <div>{executive_order_id}</div>
+      <div>{title}</div>
+      <div>{signing_date}</div>
+      <div>{president}</div>
+    </div>
+  );
 };
 
 export default DocumentPage;
