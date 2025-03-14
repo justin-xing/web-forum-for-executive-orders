@@ -28,9 +28,9 @@ const DocumentPage = () => {
     },
   ];
 
-  const Comments = COMMENTS.map((comment) => {
+  const Comments = COMMENTS.map((comment, i) => {
     return (
-      <div>
+      <div key={i}>
         <div>{comment.username}</div>
         <div>{comment.timestamp}</div>
         <div>{comment.message}</div>
@@ -39,7 +39,7 @@ const DocumentPage = () => {
   });
 
   return (
-    <div class={styles.documentPage}>
+    <div className={styles.documentPage}>
       <div>{executive_order_id}</div>
       <div>{title}</div>
       <div>{signing_date}</div>

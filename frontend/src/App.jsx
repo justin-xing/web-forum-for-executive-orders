@@ -3,6 +3,7 @@ import Root from "./common/Root/Root";
 import DocumentList from "./pages/documentList/DocumentList/DocumentList";
 import DocumentPage from "./pages/document/DocumentPage";
 import HomePage from "./pages/home/HomePage";
+import DeletePage from "./pages/delete/DeletePage";
 // import theme from "./theme";
 // import { ThemeProvider } from "@mui/system";
 
@@ -21,6 +22,10 @@ function App() {
         {
           path: "/document/:executive_order_id",
           element: <DocumentPage />,
+        },
+        {
+          path: "/delete",
+          element: <DeletePage />,
         },
       ],
     },

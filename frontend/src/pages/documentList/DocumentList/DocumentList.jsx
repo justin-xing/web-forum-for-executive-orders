@@ -26,11 +26,11 @@ const DOCUMENTS = [
 
 // feed of documents (home is documents page)
 const DocumentList = () => {
-  const Documents = DOCUMENTS.map((doc) => {
-    return <DocumentSummary item={doc}></DocumentSummary>;
+  const Documents = DOCUMENTS.map((doc, i) => {
+    return <DocumentSummary key={i} item={doc}></DocumentSummary>;
   });
   return (
-    <main class={styles.documentListPage}>
+    <main className={styles.documentListPage}>
       <Stack
         spacing={2}
         sx={{ justifyContent: "center", alignItems: "center" }}
