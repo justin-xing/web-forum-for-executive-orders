@@ -1,2 +1,2 @@
 SELECT *
-FROM User
+FROM User;

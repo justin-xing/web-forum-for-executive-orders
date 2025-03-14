@@ -11,4 +11,4 @@ FROM Documents d
 LEFT JOIN IsCommentFor c
 	ON c.executive_order_id = d.executive_order_id
 WHERE d.executive_order_id = ?
-ORDER BY vote_score DESC
+ORDER BY vote_score DESC;
