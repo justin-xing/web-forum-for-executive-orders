@@ -14,8 +14,9 @@ const getDocumentDetailsQuery = fs
 const presidentShorthandToDB = {
   Trump: "Donald Trump",
   Biden: "Joe Biden",
-  Clinton: "Hillary Clinton",
+  Clinton: "William Clinton",
   Obama: "Barack Obama",
+  Bush: "George Bush",
 };
 
 router.get("/president/:president", (req, res) => {
