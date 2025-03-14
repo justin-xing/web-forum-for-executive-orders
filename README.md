@@ -2,10 +2,9 @@
 
 ## How to create and load the sample database
 
-Install MySQL, and create a test database and a test table (for milestone 0):
-
-1. Make sure you are in the `sampledata` directory.
-2.
+Install MySQL, and create a test database and a test table.
+To run the sample data, `cd` into the `/sampledata` directory.
+To run the production data, `cd` into the `/productiondata` directory.
 
 ```
 mysql -u root -p (or sudo mysql -u root)
