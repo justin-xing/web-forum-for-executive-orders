@@ -14,11 +14,10 @@ SET
     title              = @title,
     signing_date       = @signing_date,
     publication_date   = @publication_date,
-    tag                = @tag,
-    -- clean up unneeded chars from csv
-    president          = TRIM(
+    president          = @president,
+    tag                = TRIM(
                            REPLACE(
-                             REPLACE(@president, CHAR(13), ''),
+                             REPLACE(@tag, CHAR(13), ''),
                            CHAR(10), '')
                          );
 

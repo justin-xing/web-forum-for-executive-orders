@@ -1,3 +1,3 @@
 UPDATE VoteFor
-SET is_upvote = -1
-WHERE uid = 2 AND cid = 1 AND is_upvote = 1;
+SET is_upvote = 0
+WHERE uid = 1 AND cid = 167 AND is_upvote = 1;
