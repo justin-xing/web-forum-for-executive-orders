@@ -1,0 +1,2 @@
+DELETE FROM User
+WHERE uid=1;
