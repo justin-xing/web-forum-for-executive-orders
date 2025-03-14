@@ -5,10 +5,19 @@ const HomePage = () => {
   // REPLACE: request query for unique presidents
   const PRESIDENTS = ["Trump", "Clinton", "Obama"];
 
-  const presidentButtons = PRESIDENTS.map((pres) => (
-    <Link to={`/president/${pres}`}>{pres}</Link>
+  const presidentButtons = PRESIDENTS.map((pres, i) => (
+    <Link key={i} to={`/president/${pres}`}>
+      {pres}
+    </Link>
   ));
-  return <main class={styles.homePage}>{presidentButtons}</main>;
+  return (
+    <main className={styles.homePage}>
+      <div>{presidentButtons}</div>
+      <div>
+        <Link to="/delete">Delete</Link>
+      </div>
+    </main>
+  );
 };
 
 export default HomePage;
