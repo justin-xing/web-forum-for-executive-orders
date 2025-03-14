@@ -1,0 +1,1 @@
+SELECT DISTINCT president FROM Document;

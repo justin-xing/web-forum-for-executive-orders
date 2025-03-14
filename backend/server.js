@@ -4,6 +4,8 @@ import mysql from "mysql2";
 import { userRoute } from "./routes/user.js";
 import cors from "cors";
 import { commentRoute } from "./routes/comment.js";
+import { documentRoute } from "./routes/document.js";
+import { presidentRoute } from "./routes/president.js";
 
 dotenv.config();
 
@@ -27,6 +29,8 @@ con.connect(function (err) {
 
 app.use("/api/user", userRoute);
 app.use("/api/comment", commentRoute);
+app.use("/api/document", documentRoute);
+app.use("/api/president", presidentRoute);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);

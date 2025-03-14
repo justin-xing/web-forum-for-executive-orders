@@ -13,6 +13,7 @@ router.get("/comments/:executiveOrderId", (req, res) => {
         message: "Could not retrieve comments",
       });
     }
+    console.log(results);
     res.status(200).send({
       comments: results,
     });
