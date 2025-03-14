@@ -1,0 +1,4 @@
+SELECT * FROM Document;
+SELECT * FROM User;
+SELECT * FROM Comment;
+SELECT * FROM VoteFor;
