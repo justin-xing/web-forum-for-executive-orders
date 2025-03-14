@@ -62,6 +62,7 @@ def transform_csv(input_file: str, output_file: str) -> None:
             "title",
             "signing_date",
             "publication_date",
+            "president",
             "tag",
         ]
 
@@ -78,6 +79,7 @@ def transform_csv(input_file: str, output_file: str) -> None:
                 title = row.get("title", "")
                 signing_date = row.get("signing_date", "")
                 pub_date = row.get("publication_date", "")
+                pres = row.get("president", "")
 
                 signing_date = unify_date_format(signing_date)
                 pub_date = unify_date_format(pub_date)
@@ -98,6 +100,7 @@ def transform_csv(input_file: str, output_file: str) -> None:
                     "title": title,
                     "signing_date": signing_date,
                     "publication_date": pub_date,
+                    "president": pres,
                     "tag": best_label,
                 }
 
