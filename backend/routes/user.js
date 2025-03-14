@@ -6,7 +6,7 @@ const router = Router();
 const getUsersQuery = fs.readFileSync("queries/getUsers.sql").toString();
 const deleteUserQuery = fs.readFileSync("queries/deleteUser.sql").toString();
 
-router.get("/getAll", (req, res) => {
+router.get("/users", (req, res) => {
   con.query(getUsersQuery, function (err, results) {
     if (err) {
       res.status(400).send({

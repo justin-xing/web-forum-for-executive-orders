@@ -9,6 +9,7 @@ router.get("/comments/:executiveOrderId", (req, res) => {
   const executiveOrderId = req.params.executiveOrderId;
   con.query(getCommentsQuery, [executiveOrderId], function (err, results) {
     if (err) {
+      console.log(err);
       res.status(400).send({
         message: "Could not retrieve comments",
       });

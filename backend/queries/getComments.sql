@@ -1,10 +1,10 @@
 SELECT u.username, c.cid, c.timestamp, c.message, (
 SELECT count(uid)
-FROM Vote
+FROM VoteFor
 WHERE is_upvote=1 AND cid=c.cid
 ) - (
 SELECT count(uid)
-FROM Vote
+FROM VoteFor
 WHERE is_upvote=0 AND cid=c.cid
 ) AS vote_score
 FROM Document d
