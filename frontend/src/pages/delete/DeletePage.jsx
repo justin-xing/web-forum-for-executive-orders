@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
+import { Button, Stack } from "@mui/material";
 
 const DeletePage = () => {
   const [users, setUsers] = useState([]);
@@ -22,9 +23,17 @@ const DeletePage = () => {
   };
 
   return (
-    <div>
+    <Stack
+      spacing={2}
+      sx={{ justifyContent: "center", alignItems: "center" }}
+      className="pt-8"
+    >
       {users.map((user, i) => (
-        <div key={i} className="flex gap-2">
+        <Button
+          variant="outlined"
+          sx={{ border: 1, display: "flex", gap: 10 }}
+          key={i}
+        >
           <div>{user.uid}</div>
           <div>{user.name}</div>
           <div>{user.username}</div>
@@ -37,9 +46,9 @@ const DeletePage = () => {
           >
             <HighlightOffIcon />
           </button>
-        </div>
+        </Button>
       ))}
-    </div>
+    </Stack>
   );
 };
 
