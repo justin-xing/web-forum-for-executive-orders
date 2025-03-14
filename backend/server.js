@@ -1,16 +1,19 @@
-require("dotenv").config();
-const express = require("express");
-var mysql = require("mysql2");
-var fs = require("fs");
+import dotenv from "dotenv";
+import express from "express";
+import mysql from "mysql2";
+import { userRoute } from "./routes/user.js";
+import cors from "cors";
+import { commentRoute } from "./routes/comment.js";
 
-// queries
-var deleteUserQuery = fs.readFileSync("queries/deleteUser.sql").toString();
-var getCommentsQuery = fs.readFileSync("queries/getComments.sql").toString();
+dotenv.config();
 
 const app = express();
 const port = 3000;
 
-var con = mysql.createConnection({
+app.use(cors());
+app.use(express.json());
+
+export const con = mysql.createConnection({
   host: "localhost",
   user: process.env.MYSQL_USER,
   password: process.env.MYSQL_PASSWORD,
@@ -22,35 +25,8 @@ con.connect(function (err) {
   console.log("Connected!");
 });
 
-// split these into separate routers later, implement error handling for bad params, etc.
-
-app.get("/comments/:executiveOrderId", (req, res) => {
-  const executiveOrderId = req.params.executiveOrderId;
-  con.query(getCommentsQuery, [executiveOrderId], function (err, results) {
-    if (err) {
-      res.status(400).send({
-        message: "Could not retrieve comments",
-      });
-    }
-    res.status(200).send({
-      comments: results,
-    });
-  });
-});
-
-app.delete("/user/:id", (req, res) => {
-  const userId = req.params.id;
-  con.query(deleteUserQuery, [userId], function (err, results) {
-    if (err) {
-      res.status(400).send({
-        message: "Could not delete user",
-      });
-    }
-    res.status(200).send({
-      message: "User successfully deleted",
-    });
-  });
-});
+app.use("/api/user", userRoute);
+app.use("/api/comment", commentRoute);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
