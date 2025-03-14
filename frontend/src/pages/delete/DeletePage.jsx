@@ -6,7 +6,7 @@ const DeletePage = () => {
 
   useEffect(() => {
     const fetchAllUsers = async () => {
-      const res = await fetch("/api/user/getAll");
+      const res = await fetch("/api/user/users");
       const data = await res.json();
       setUsers(data.users);
     };
