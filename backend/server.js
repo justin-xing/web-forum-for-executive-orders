@@ -19,7 +19,7 @@ export const con = mysql.createConnection({
   host: "localhost",
   user: process.env.MYSQL_USER,
   password: process.env.MYSQL_PASSWORD,
-  database: "testDB",
+  database: "testDB2",
 });
 
 con.connect(function (err) {

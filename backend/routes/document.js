@@ -22,7 +22,20 @@ const presidentShorthandToDB = {
 router.get("/president/:president", (req, res) => {
   const president = presidentShorthandToDB[req.params.president];
 
-  con.query(getDocumentsQuery, [president], function (err, results) {
+  const tag = req.query.tag;
+
+  let query = getDocumentsQuery;
+
+  let params = [president];
+
+  if (tag) {
+    // modify query to add filter
+    query = getDocumentsQuery.slice(0, -1);
+    query += ` AND tag = ?;`;
+    params.push(tag);
+  }
+
+  con.query(query, params, function (err, results) {
     if (err) {
       res.status(400).send({
         message: "Could not retrieve documents",
