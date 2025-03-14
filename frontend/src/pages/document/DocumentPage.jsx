@@ -15,12 +15,36 @@ const DocumentPage = () => {
 
   // REPLACE: get comments with api call using executive_order_id, render comments
 
+  const COMMENTS = [
+    {
+      username: "swagmaster",
+      message: "hihihihihihi",
+      timestamp: "insert timestamp",
+    },
+    {
+      username: "swagmaster",
+      message: "hihihihihihi",
+      timestamp: "insert timestamp",
+    },
+  ];
+
+  const Comments = COMMENTS.map((comment) => {
+    return (
+      <div>
+        <div>{comment.username}</div>
+        <div>{comment.timestamp}</div>
+        <div>{comment.message}</div>
+      </div>
+    );
+  });
+
   return (
     <div class={styles.documentPage}>
       <div>{executive_order_id}</div>
       <div>{title}</div>
       <div>{signing_date}</div>
       <div>{president}</div>
+      {Comments}
     </div>
   );
 };
