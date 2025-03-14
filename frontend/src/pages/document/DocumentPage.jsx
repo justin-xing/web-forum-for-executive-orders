@@ -30,11 +30,14 @@ const DocumentPage = () => {
 
   const Comments = comments.map((comment, i) => {
     return (
-      <div key={i}>
-        <div>{comment.username}</div>
-        <div>{comment.timestamp}</div>
-        <div>{comment.message}</div>
-        <div>{comment.vote_score}</div>
+      <div
+        key={i}
+        style={{ borderWidth: 1, borderColor: "black", borderStyle: "solid" }}
+      >
+        <div>User: {comment.username}</div>
+        <div>Timestamp: {comment.timestamp}</div>
+        <div>Message: {comment.message}</div>
+        <div>Vote score: {comment.vote_score}</div>
       </div>
     );
   });
