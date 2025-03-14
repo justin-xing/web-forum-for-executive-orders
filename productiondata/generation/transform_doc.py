@@ -6,13 +6,11 @@ TAG_CATEGORIES = [
     "Military",
     "Immigration",
     "Economics",
-    "Regulation",
     "Environment",
     "Health",
     "Cyber",
     "Justice",
     "Diplomacy",
-    "Equality",
     "Infrastructure",
     "Education"
 ]
@@ -40,14 +38,12 @@ def unify_date_format(date_str: str) -> str:
 
     return date_str
 
-
 def transform_csv(input_file: str, output_file: str) -> None:
     """
     Reads the original data.gov CSV, extracts/renames fields,
     uses a local zero-shot classification pipeline for tagging,
     and normalizes date formats to YYYY-MM-DD.
     """
-
     classifier = pipeline("zero-shot-classification", model="facebook/bart-large-mnli")
 
     with open(input_file, mode="r", encoding="utf-8") as fin:
@@ -71,7 +67,7 @@ def transform_csv(input_file: str, output_file: str) -> None:
             writer.writeheader()
 
             for row in reader:
-                eo_number = row.get("executive_order_number", "")
+                eo_number = row.get("executive_order_id", "")
                 pdf_url = row.get("pdf_url", "")
                 citation = row.get("citation", "")
                 start_page = row.get("start_page", "")
@@ -106,9 +102,8 @@ def transform_csv(input_file: str, output_file: str) -> None:
 
                 writer.writerow(new_row)
 
-
 if __name__ == "__main__":
     input_csv = "base_data.csv"
-    output_csv = "output.csv"
+    output_csv = "output_proddoc.csv"
     transform_csv(input_csv, output_csv)
     print(f"Transformed CSV written to {output_csv}")
