@@ -1,11 +1,22 @@
 import styles from "./HomePage.module.css";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const HomePage = () => {
   // REPLACE: request query for unique presidents
-  const PRESIDENTS = ["Trump", "Clinton", "Obama"];
 
-  const presidentButtons = PRESIDENTS.map((pres, i) => (
+  const [presidents, setPresidents] = useState([]);
+
+  useEffect(() => {
+    const fetchPresidents = async () => {
+      const res = await fetch(`/api/president`);
+      const data = await res.json();
+      setPresidents(data.presidents);
+    };
+    fetchPresidents();
+  }, []);
+
+  const presidentButtons = presidents.map((pres, i) => (
     <Link key={i} to={`/president/${pres}`}>
       {pres}
     </Link>
