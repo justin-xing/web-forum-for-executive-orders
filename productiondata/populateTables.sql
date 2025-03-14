@@ -4,7 +4,7 @@ FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 LINES
-(@executive_order_id, @pdf_url, @citation, @start_page, @end_page, @title, @signing_date, @publication_date, @tag, @president)
+(@executive_order_id, @pdf_url, @citation, @start_page, @end_page, @title, @signing_date, @publication_date, @president, @tag)
 SET 
     executive_order_id = @executive_order_id,
     pdf_url            = @pdf_url,
