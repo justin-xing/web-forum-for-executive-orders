@@ -63,6 +63,7 @@ mysql> ALTER USER ’apiusr’@’localhost’ IDENTIFIED WITH mysql_native_pass
 ```
 
 ## How to run backend locally
+(Remember to run database beforehand)
 
 1. `cd` into the `/backend` folder
 2. Ensure you have Node installed. Using NVM to install it is recommended.
@@ -100,7 +101,6 @@ npm run dev
 The frontend server should be running on http://localhost:5173/
 
 ## Features implemented so far
-- Fetching all presidents with records in the database, and displaying them as options.
-- Retrieving all documents per president, which can be filtered based on tag
-- Upon clicking on a document, its details are retrieved and displayed, and all comments associated with the document are retrieved and displayed
-- Admin panel to display all users and allow for the deletion of a user
+- Retrieving all documents per president, which can be filtered based on tag (Basic Feature 1). Backend endpoint can be found at backend/routes/document.js. Frontend page can be found at frontend/.../pages/.../DocumentList.jsx.
+- Upon clicking on a document, its details are retrieved and displayed, and all comments associated with the document are retrieved and displayed (Basic Feature 2). Backend endpoint can be found at backend/routes/comment.js. Frontend page can be found at frontend/.../pages/DocumentPage.jsx.
+- Admin panel to display all users and allow for the deletion of a user (Basic Feature 3) Backend endpoint can be found at backend/routes/user.js. Frontend page can be found at frontend/.../pages/.../DeletePage.jsx.
