@@ -72,7 +72,7 @@ mysql> ALTER USER ’apiusr’@’localhost’ IDENTIFIED WITH mysql_native_pass
 npm i
 ```
 
-3. Create a `.env` file and populate it accordingly.
+3. Create a `.env` file and populate it accordingly, following the same structure as the .env.example file.
 4. Start the server
 
 ```
@@ -87,7 +87,7 @@ You should see a couple messages, including 'Connected!', confirming your databa
 2. Install dependencies (skip if already installed)
 
 ```
-# run if this is your first time locally running the backend
+# run if this is your first time locally running the frontend
 npm i
 ```
 
@@ -100,6 +100,7 @@ npm run dev
 The frontend server should be running on http://localhost:5173/
 
 ## Features implemented so far
-
-- Retrieving comments under a specific executive order
-- Deletion of a user
+- Fetching all presidents with records in the database, and displaying them as options.
+- Retrieving all documents per president, which can be filtered based on tag
+- Upon clicking on a document, its details are retrieved and displayed, and all comments associated with the document are retrieved and displayed
+- Admin panel to display all users and allow for the deletion of a user
