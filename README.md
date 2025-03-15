@@ -101,7 +101,7 @@ npm run dev
 The frontend server should be running on http://localhost:5173/
 
 ## Features implemented so far
-Note: associated query file paths can be found in the imports of the respective backend route files.
+Note: associated query file paths can be found in the imports of the respective backend route files. You can also find them in the **basic-features** folder.
 - Retrieving all documents per president, which can be filtered based on tag (Basic Feature 1). Backend endpoint can be found at **backend/routes/document.js**. Frontend page can be found at **frontend/.../pages/.../DocumentList.jsx**.
 - Upon clicking on a document, its details are retrieved and displayed, and all comments associated with the document are retrieved and displayed (Basic Feature 2). Backend endpoint can be found at **backend/routes/comment.js**. Frontend page can be found at **frontend/.../pages/DocumentPage.jsx**.
 - Admin panel to display all users and allow for the deletion of a user (Basic Feature 3). Backend endpoint can be found at **backend/routes/user.js**. Frontend page can be found at **frontend/.../pages/.../DeletePage.jsx**.
