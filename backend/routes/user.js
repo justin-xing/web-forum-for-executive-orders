@@ -5,6 +5,7 @@ const router = Router();
 
 const getUsersQuery = fs.readFileSync("queries/getUsers.sql").toString();
 const deleteUserQuery = fs.readFileSync("queries/deleteUser.sql").toString();
+const updateUserRoleQuery = fs.readFileSync("queries/updateUserRole.sql").toString();
 
 router.get("/users", (req, res) => {
   con.query(getUsersQuery, function (err, results) {
@@ -29,6 +30,22 @@ router.delete("/delete/:id", (req, res) => {
     }
     res.status(200).send({
       message: "User successfully deleted",
+    });
+  });
+});
+
+router.put("/update/:id", (req, res) => {
+  const userId = req.params.id;
+  const { role } = req.body;
+  
+  con.query(updateUserRoleQuery, [role, userId], function (err, results) {
+    if (err) {
+      res.status(400).send({
+        message: "Could not update user",
+      });
+    }
+    res.status(200).send({
+      message: "User successfully updated",
     });
   });
 });
