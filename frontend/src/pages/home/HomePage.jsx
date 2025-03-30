@@ -11,7 +11,6 @@ const HomePage = () => {
       const res = await fetch("/api/president");
       const data = await res.json();
       setPresidents(data.presidents);
-      console.log(data.presidents);
     };
     fetchPresidents();
   }, []);

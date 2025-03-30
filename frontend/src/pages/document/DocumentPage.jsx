@@ -33,7 +33,11 @@ const DocumentPage = () => {
   }, [executive_order_id]);
 
   const deleteComment = async (cid) => {
-    return null;
+    await fetch(`/api/comment/delete/${cid}`, {
+      method: "DELETE",
+    });
+    const updatedComments = comments.filter((comment) => comment.cid !== cid);
+    setComments(updatedComments);
   };
 
   const Comments = comments.map((comment, i) => {

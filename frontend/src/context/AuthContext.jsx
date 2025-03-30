@@ -14,7 +14,6 @@ const AuthProvider = ({ children }) => {
     if (storedUser) {
       setUser(JSON.parse(storedUser));
     }
-    console.log("User from local storage:", storedUser);
   }, []);
 
   const login = async (e) => {
@@ -52,17 +51,6 @@ const AuthProvider = ({ children }) => {
     const email = form.email.value;
     const gender = form.gender.value;
     const dateOfBirth = form.dateOfBirth.value;
-
-    console.log(
-      name,
-      username,
-      location,
-      role,
-      password,
-      email,
-      gender,
-      dateOfBirth
-    );
 
     let res = await fetch("/api/auth/signup", {
       method: "POST",

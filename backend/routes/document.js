@@ -35,15 +35,12 @@ router.get("/president/:president", (req, res) => {
     params.push(tag);
   }
 
-  console.log("HIHU: ", params);
-
   con.query(query, params, function (err, results) {
     if (err) {
       res.status(400).send({
         message: "Could not retrieve documents",
       });
     }
-    console.log(results);
     res.status(200).send({
       documents: results,
     });

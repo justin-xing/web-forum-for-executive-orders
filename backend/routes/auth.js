@@ -44,7 +44,6 @@ router.post("/signup", async (req, res) => {
     dateOfBirth,
   } = req.body;
 
-  console.log(req.body, "ASDSADS");
   const hashedPassword = await bcrypt.hash(password, 10);
 
   con.query(
