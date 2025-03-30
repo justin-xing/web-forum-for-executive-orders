@@ -1,3 +1,11 @@
+LOAD DATA LOCAL INFILE 'generation/output_user.csv'
+INTO TABLE User
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+(uid,name,username,location,role,password_hash,email,gender,account_creation_date,date_of_birth,profile_picture_url,bio);
+
 LOAD DATA LOCAL INFILE 'generation/output_document.csv'
 INTO TABLE Document
 FIELDS TERMINATED BY ','
@@ -19,16 +27,9 @@ SET
                            REPLACE(
                              REPLACE(@tag, CHAR(13), ''),
                            CHAR(10), '')
-                         );
-
-LOAD DATA LOCAL INFILE 'generation/output_user.csv'
-INTO TABLE User
-FIELDS TERMINATED BY ','
-ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 LINES
-(uid,name,username,location,role,password_hash,email,gender,account_creation_date,date_of_birth,profile_picture_url,bio);
-
+                         ),
+    user_id            = 1;
+    
 LOAD DATA LOCAL INFILE 'generation/output_comments.csv'
 INTO TABLE Comment
 FIELDS TERMINATED BY ','

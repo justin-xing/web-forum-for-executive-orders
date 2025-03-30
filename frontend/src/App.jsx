@@ -4,8 +4,9 @@ import DocumentList from "./pages/documentList/DocumentList/DocumentList";
 import DocumentPage from "./pages/document/DocumentPage";
 import HomePage from "./pages/home/HomePage";
 import DeletePage from "./pages/delete/DeletePage";
-// import theme from "./theme";
-// import { ThemeProvider } from "@mui/system";
+import AuthProvider from "./context/AuthContext";
+import LoginPage from "./pages/login/LoginPage";
+import SignupPage from "./pages/signup/SignupPage";
 
 function App() {
   const router = createBrowserRouter([
@@ -27,11 +28,23 @@ function App() {
           path: "/delete",
           element: <DeletePage />,
         },
+        {
+          path: "/login",
+          element: <LoginPage />,
+        },
+        {
+          path: "/signup",
+          element: <SignupPage />,
+        },
       ],
     },
   ]);
 
-  return <RouterProvider router={router} />;
+  return (
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  );
 }
 
 export default App;

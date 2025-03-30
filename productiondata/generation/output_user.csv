@@ -1,5 +1,5 @@
 uid,name,username,location,role,password_hash,email,gender,account_creation_date,date_of_birth,profile_picture_url,bio
-1,Peter,johnmartin,Winnipeg,regular,"-""*p<Wi8!p",stephen86@example.org,Male,2024-08-12 08:57:20,1967-09-27,https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341,i am peter. me like politics
+1,Peter,johnmartin,Winnipeg,admin,"-""*p<Wi8!p",stephen86@example.org,Male,2024-08-12 08:57:20,1967-09-27,https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341,i am peter. me like politics
 2,Jason,amorales,Waterloo,regular,7:'|DD]-LI,heather66@example.org,Male,2024-09-02 14:38:39,2005-12-15,https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341,i am jason. me like politics
 3,Frederick,pbaldwin,Waterloo,regular,D[s6:d$MI),redwards@example.org,Female,2024-05-20 13:04:18,1981-09-18,https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341,i am frederick. me like politics
 4,Jessica,owelch,Quebec City,regular,+`p8g(6Je1,shannon42@example.net,Female,2024-12-14 22:04:10,1962-10-06,https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341,i am jessica. me like politics

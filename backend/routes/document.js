@@ -35,6 +35,8 @@ router.get("/president/:president", (req, res) => {
     params.push(tag);
   }
 
+  console.log("HIHU: ", params);
+
   con.query(query, params, function (err, results) {
     if (err) {
       res.status(400).send({
