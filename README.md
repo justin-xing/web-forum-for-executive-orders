@@ -31,6 +31,7 @@ Install MySQL, and create a test database and a test table.
 To run the production data, `cd` into the `/productiondata` directory.
 
 ### Generating CSV
+
 ```
 cd generation
 python3 -m venv venv
@@ -40,8 +41,11 @@ python generate_user.py
 python generate_comment.py
 python generate_upvote.py
 ```
+
 ### Populating DB
+
 Make sure you are in the `/productiondata` and NOT `/productiondata/generation`
+
 ```
 mysql -u root -p (or sudo mysql -u root)
 mysql> CREATE DATABASE testDB;
@@ -63,6 +67,7 @@ mysql> ALTER USER ’apiusr’@’localhost’ IDENTIFIED WITH mysql_native_pass
 ```
 
 ## How to run backend locally
+
 (Remember to run database beforehand)
 
 1. `cd` into the `/backend` folder
@@ -101,7 +106,9 @@ npm run dev
 The frontend server should be running on http://localhost:5173/
 
 ## Features implemented so far
+
 Note: associated query file paths can be found in the imports of the respective backend route files. You can also find them in the **basic-features** folder.
+
 - Retrieving all documents per president, which can be filtered based on tag (Basic Feature 1). Backend endpoint can be found at **backend/routes/document.js**. Frontend page can be found at **frontend/.../pages/.../DocumentList.jsx**.
 - Upon clicking on a document, its details are retrieved and displayed, and all comments associated with the document are retrieved and displayed (Basic Feature 2). Backend endpoint can be found at **backend/routes/comment.js**. Frontend page can be found at **frontend/.../pages/DocumentPage.jsx**.
-- Admin panel to display all users and allow for the deletion of a user (Basic Feature 3). Backend endpoint can be found at **backend/routes/user.js**. Frontend page can be found at **frontend/.../pages/.../DeletePage.jsx**.
+- Admin panel to display all users and allow for the deletion of a user (Basic Feature 3). Backend endpoint can be found at **backend/routes/user.js**. Frontend page can be found at **frontend/.../pages/.../AdminPage.jsx**.

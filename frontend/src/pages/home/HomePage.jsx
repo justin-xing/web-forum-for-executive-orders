@@ -43,9 +43,9 @@ const HomePage = () => {
         <div>
           <Link
             className="hover:cursor-pointer hover:underline hover:text-blue-400"
-            to="/delete"
+            to="/admin"
           >
-            Delete
+            Admin
           </Link>
         </div>
       </div>

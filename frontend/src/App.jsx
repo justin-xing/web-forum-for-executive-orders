@@ -3,7 +3,7 @@ import Root from "./common/Root/Root";
 import DocumentList from "./pages/documentList/DocumentList/DocumentList";
 import DocumentPage from "./pages/document/DocumentPage";
 import HomePage from "./pages/home/HomePage";
-import DeletePage from "./pages/delete/DeletePage";
+import AdminPage from "./pages/admin/AdminPage";
 import AuthProvider from "./context/AuthContext";
 import LoginPage from "./pages/login/LoginPage";
 import SignupPage from "./pages/signup/SignupPage";
@@ -25,8 +25,8 @@ function App() {
           element: <DocumentPage />,
         },
         {
-          path: "/delete",
-          element: <DeletePage />,
+          path: "/admin",
+          element: <AdminPage />,
         },
         {
           path: "/login",

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import { Button, Stack } from "@mui/material";
 
-const DeletePage = () => {
+const AdminPage = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -52,4 +52,4 @@ const DeletePage = () => {
   );
 };
 
-export default DeletePage;
+export default AdminPage;
