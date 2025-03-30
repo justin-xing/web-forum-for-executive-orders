@@ -2,6 +2,8 @@ import styles from "./DocumentPage.module.css";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
+import ThumbDownIcon from "@mui/icons-material/ThumbDown";
 import { useAuth } from "../../context/AuthContext";
 
 const DocumentPage = () => {
@@ -17,27 +19,43 @@ const DocumentPage = () => {
 
   const [comments, setComments] = useState([]);
 
+  const fetchDocumentDetails = async () => {
+    const res = await fetch(`/api/document/${executive_order_id}`);
+    const data = await res.json();
+    setDocument(data.document);
+  };
+  const fetchComments = async () => {
+    const res = await fetch(`/api/comment/comments/${executive_order_id}`);
+    const data = await res.json();
+    setComments(data.comments);
+  };
+
   useEffect(() => {
-    const fetchDocumentDetails = async () => {
-      const res = await fetch(`/api/document/${executive_order_id}`);
-      const data = await res.json();
-      setDocument(data.document);
-    };
     fetchDocumentDetails();
-    const fetchComments = async () => {
-      const res = await fetch(`/api/comment/comments/${executive_order_id}`);
-      const data = await res.json();
-      setComments(data.comments);
-    };
     fetchComments();
   }, [executive_order_id]);
 
   const deleteComment = async (cid) => {
-    await fetch(`/api/comment/delete/${cid}`, {
+    await fetch(`/api/comment/comments/${cid}`, {
       method: "DELETE",
     });
     const updatedComments = comments.filter((comment) => comment.cid !== cid);
     setComments(updatedComments);
+  };
+
+  const vote = async (vote, uid, cid) => {
+    await fetch("/api/vote/votes", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        vote,
+        uid,
+        cid,
+      }),
+    });
+    fetchComments();
   };
 
   const Comments = comments.map((comment, i) => {
@@ -52,6 +70,26 @@ const DocumentPage = () => {
           <div>Timestamp: {comment.timestamp}</div>
           <div>Message: {comment.message}</div>
           <div>Vote score: {comment.vote_score}</div>
+          {user && (
+            <div className="flex gap-2">
+              <div className="flex items-center gap-1">
+                <button
+                  className="hover:cursor-pointer"
+                  onClick={() => vote(1, comment.uid, comment.cid)}
+                >
+                  <ThumbUpIcon />
+                </button>
+                <div>{comment.upvotes}</div>
+              </div>
+              <button
+                className="hover:cursor-pointer"
+                onClick={() => vote(0, comment.uid, comment.cid)}
+              >
+                <ThumbDownIcon />
+              </button>
+              <div>{comment.downvotes}</div>
+            </div>
+          )}
         </div>
         {user && user.role === "admin" && (
           <div>

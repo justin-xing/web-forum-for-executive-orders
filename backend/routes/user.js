@@ -19,7 +19,7 @@ router.get("/users", (req, res) => {
   });
 });
 
-router.delete("/delete/:id", (req, res) => {
+router.delete("/users/:id", (req, res) => {
   const userId = req.params.id;
   con.query(deleteUserQuery, [userId], function (err, results) {
     if (err) {

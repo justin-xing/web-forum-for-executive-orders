@@ -15,7 +15,7 @@ const AdminPage = () => {
   }, []);
 
   const deleteUser = async (uid) => {
-    await fetch(`/api/user/delete/${uid}`, {
+    await fetch(`/api/user/users/${uid}`, {
       method: "DELETE",
     });
     const updatedUsers = users.filter((user) => user.uid !== uid);

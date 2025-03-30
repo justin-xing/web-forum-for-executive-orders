@@ -7,6 +7,7 @@ import { commentRoute } from "./routes/comment.js";
 import { documentRoute } from "./routes/document.js";
 import { presidentRoute } from "./routes/president.js";
 import { authRoute } from "./routes/auth.js";
+import { voteRoute } from "./routes/vote.js";
 
 dotenv.config();
 
@@ -33,6 +34,7 @@ app.use("/api/comment", commentRoute);
 app.use("/api/document", documentRoute);
 app.use("/api/president", presidentRoute);
 app.use("/api/auth", authRoute);
+app.use("/api/vote", voteRoute);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);

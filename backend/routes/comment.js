@@ -23,7 +23,7 @@ router.get("/comments/:executiveOrderId", (req, res) => {
   });
 });
 
-router.delete("/delete/:id", (req, res) => {
+router.delete("/comments/:id", (req, res) => {
   const commentId = req.params.id;
   con.query(deleteCommentQuery, [commentId], function (err, results) {
     if (err) {
