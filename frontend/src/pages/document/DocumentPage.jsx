@@ -1,9 +1,12 @@
 import styles from "./DocumentPage.module.css";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import HighlightOffIcon from "@mui/icons-material/HighlightOff";
+import { useAuth } from "../../context/AuthContext";
 
 const DocumentPage = () => {
   const { executive_order_id } = useParams();
+  const { user } = useAuth();
 
   const [document, setDocument] = useState({
     title: "",
@@ -29,16 +32,33 @@ const DocumentPage = () => {
     fetchComments();
   }, [executive_order_id]);
 
+  const deleteComment = async (cid) => {
+    return null;
+  };
+
   const Comments = comments.map((comment, i) => {
     return (
       <div
         key={i}
         style={{ borderWidth: 1, borderColor: "black", borderStyle: "solid" }}
+        className="flex justify-between items-center p-2"
       >
-        <div>User: {comment.username}</div>
-        <div>Timestamp: {comment.timestamp}</div>
-        <div>Message: {comment.message}</div>
-        <div>Vote score: {comment.vote_score}</div>
+        <div>
+          <div>User: {comment.username}</div>
+          <div>Timestamp: {comment.timestamp}</div>
+          <div>Message: {comment.message}</div>
+          <div>Vote score: {comment.vote_score}</div>
+        </div>
+        {user && user.role === "admin" && (
+          <div>
+            <button
+              className="hover:cursor-pointer"
+              onClick={() => deleteComment(comment.cid)}
+            >
+              <HighlightOffIcon />
+            </button>
+          </div>
+        )}
       </div>
     );
   });

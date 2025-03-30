@@ -1,4 +1,4 @@
-import { useContext, createContext, useState } from "react";
+import { useContext, createContext, useState, useEffect } from "react";
 
 const AuthContext = createContext(null);
 
@@ -8,6 +8,14 @@ export const useAuth = () => {
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+    console.log("User from local storage:", storedUser);
+  }, []);
 
   const login = async (e) => {
     e.preventDefault();
@@ -29,6 +37,7 @@ const AuthProvider = ({ children }) => {
       return;
     }
     setUser(data.user);
+    localStorage.setItem("user", JSON.stringify(data.user));
     window.location.href = "/";
   };
 
@@ -87,11 +96,13 @@ const AuthProvider = ({ children }) => {
     });
     data = await res.json();
     setUser(data.user);
+    localStorage.setItem("user", JSON.stringify(data.user));
     window.location.href = "/";
   };
 
   const logout = async () => {
     setUser(null);
+    localStorage.removeItem("user");
   };
 
   return (
