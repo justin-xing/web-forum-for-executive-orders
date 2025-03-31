@@ -12,11 +12,13 @@ import {
   MenuItem,
 } from "@mui/material";
 import { Edit, Delete, Save, HighlightOff } from "@mui/icons-material";
+import { useAuth } from "../../context/AuthContext";
 
 const AdminPage = () => {
   const [users, setUsers] = useState([]);
   const [editingUser, setEditingUser] = useState(null);
   const [editedRole, setEditedRole] = useState(null);
+  const { user } = useAuth();
 
   useEffect(() => {
     const fetchAllUsers = async () => {
@@ -28,7 +30,7 @@ const AdminPage = () => {
   }, []);
 
   const deleteUser = async (uid) => {
-    await fetch(`/api/user/delete/${uid}`, {
+    await fetch(`/api/user/users/${uid}`, {
       method: "DELETE",
     });
     const updatedUsers = users.filter((user) => user.uid !== uid);
@@ -69,6 +71,19 @@ const AdminPage = () => {
     setEditingUser(null);
     setEditedRole(null);
   };
+
+  if (!user || user.role !== "admin") {
+    return (
+      <div className="h-screen flex justify-center items-center text-2xl">
+        <div className="text-center">
+          <div>Access Denied</div>
+          <div className="text-xl italic text-gray-500">
+            User is not an admin
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <TableContainer

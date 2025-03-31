@@ -11,6 +11,10 @@ const getDocumentDetailsQuery = fs
   .readFileSync("queries/getDocumentDetails.sql")
   .toString();
 
+const searchDocumentsQuery = fs
+  .readFileSync("queries/searchDocuments.sql")
+  .toString();
+
 const presidentShorthandToDB = {
   Trump: "Donald Trump",
   Biden: "Joe Biden",
@@ -18,6 +22,21 @@ const presidentShorthandToDB = {
   Obama: "Barack Obama",
   Bush: "George Bush",
 };
+
+router.get("/search", (req, res) => {
+  const searchTerm = req.query.term;
+
+  con.query(searchDocumentsQuery, [searchTerm], function (err, results) {
+    if (err) {
+      res.status(400).send({
+        message: "Error searching documents",
+      });
+    }
+    res.status(200).send({
+      documents: results,
+    });
+  });
+});
 
 router.get("/president/:president", (req, res) => {
   const president = presidentShorthandToDB[req.params.president];
@@ -35,15 +54,12 @@ router.get("/president/:president", (req, res) => {
     params.push(tag);
   }
 
-  console.log("HIHU: ", params);
-
   con.query(query, params, function (err, results) {
     if (err) {
       res.status(400).send({
         message: "Could not retrieve documents",
       });
     }
-    console.log(results);
     res.status(200).send({
       documents: results,
     });

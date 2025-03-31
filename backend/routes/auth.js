@@ -13,6 +13,7 @@ router.post("/login", (req, res) => {
 
   con.query(getLoginQuery, [email], async (err, results) => {
     if (err) {
+      console.log(err);
       return res.status(400).send({ error: "Could not retrieve user" });
     }
     if (results.length === 0) {
@@ -44,7 +45,6 @@ router.post("/signup", async (req, res) => {
     dateOfBirth,
   } = req.body;
 
-  console.log(req.body, "ASDSADS");
   const hashedPassword = await bcrypt.hash(password, 10);
 
   con.query(
@@ -61,6 +61,7 @@ router.post("/signup", async (req, res) => {
     ],
     (err, results) => {
       if (err) {
+        console.log(err);
         return res.status(400).send({ error: "Could not create user" });
       }
       res.status(201).send({ message: "User created successfully" });
