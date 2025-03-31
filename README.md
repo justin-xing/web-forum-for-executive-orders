@@ -17,12 +17,23 @@ mysql> source "**FULL PATH TO populateTables.sql**"
 mysql> source "**FULL PATH TO outputTables.sql**"
 ```
 
-Create a user you will use to connect to the database in the application:
+Create an admin user you will use to connect to the database in the application:
 
 ```
 mysql> CREATE USER ’apiusr’@’localhost’ IDENTIFIED BY ’password’;
 mysql> GRANT ALL ON *.* to ’apiusr’@’localhost’;
 mysql> ALTER USER ’apiusr’@’localhost’ IDENTIFIED WITH mysql_native_password BY ’password’;
+```
+
+Create a basic restricted user you will use to connect to the database in the application:
+```
+CREATE USER 'basicusr'@'localhost' IDENTIFIED BY 'password';
+GRANT SELECT, INSERT, UPDATE ON testDB.Comment TO 'basicusr'@'localhost';
+GRANT SELECT, INSERT, UPDATE ON testDB.VoteFor TO 'basicusr'@'localhost';
+GRANT SELECT, INSERT, UPDATE ON testDB.User TO 'basicusr'@'localhost';
+GRANT SELECT ON testDB.Document TO 'basicusr'@'localhost';
+REVOKE DELETE ON testDB.User FROM 'basicusr'@'localhost';
+FLUSH PRIVILEGES;
 ```
 
 ## How to create and load the production database
