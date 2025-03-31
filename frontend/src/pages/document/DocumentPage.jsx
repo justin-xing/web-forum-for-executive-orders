@@ -5,6 +5,7 @@ import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ThumbDownIcon from "@mui/icons-material/ThumbDown";
 import { useAuth } from "../../context/AuthContext";
+import CommentInput from "./CommentInput";
 
 const DocumentPage = () => {
   const { executive_order_id } = useParams();
@@ -115,6 +116,7 @@ const DocumentPage = () => {
       </div>
       <div>Signed By: {document.president}</div>
       <b>Comments</b>
+      <CommentInput executiveOrderId={executive_order_id}/>
       {Comments}
     </div>
   );
