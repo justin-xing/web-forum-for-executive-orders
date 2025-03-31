@@ -42,7 +42,6 @@ router.post("/pdfproxy", async (req, res) => {
   const { url } = req.body;
   try {
     const response = await fetch(url);
-    console.log(response);
     const arrayBuffer = await response.arrayBuffer();
     const data = Buffer.from(arrayBuffer);
     res.set("Access-Control-Allow-Origin", "*");

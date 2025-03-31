@@ -58,7 +58,7 @@ const HomePage = () => {
           />
           <button
             type="submit"
-            className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+            className="mt-2 px-4 py-2 bg-[#264572] text-white rounded-md hover:cursor-pointer"
           >
             Search
           </button>
@@ -99,44 +99,40 @@ const HomePage = () => {
         ) : (
           <div className="w-full max-w-xl space-y-3">
             {presidentScores?.map((pres, i) => (
-              <div
+              <Link
+                className="text-xl hover:text-blue-600 hover:underline flex justify-between items-center px-6 py-3 bg-white shadow-sm rounded-lg border border-gray-200 hover:bg-gray-50"
+                to={`/president/${pres.president.split(" ")[1]}`}
                 key={i}
-                className="flex justify-between items-center px-6 py-3 bg-white shadow-sm rounded-lg border border-gray-200 hover:bg-gray-50"
               >
-                <Link
-                  className="text-xl hover:text-blue-600 hover:underline"
-                  to={`/president/${pres.president.split(" ")[1]}`}
-                >
-                  {pres.president}
-                </Link>
-                <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                {pres.president}
+                <div className="bg-blue-100 text-[#264572] px-3 py-1 rounded-full text-sm font-medium">
                   {pres.relevance_score} interactions
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         )}
 
         <div className="w-full max-w-xl mt-4">
-          <div className="flex justify-between items-center px-6 py-3 bg-white shadow-sm rounded-lg border border-gray-200 hover:bg-gray-50">
-            <Link
-              className="text-xl hover:text-blue-600 hover:underline"
-              to="/admin"
-            >
+          <Link
+            className="text-xl hover:text-blue-600 hover:underline"
+            to="/admin"
+          >
+            <div className="flex justify-between items-center px-6 py-3 bg-white shadow-sm rounded-lg border border-gray-200 hover:bg-gray-50">
               Admin
-            </Link>
-          </div>
+            </div>
+          </Link>
         </div>
 
         <div className="w-full max-w-xl">
-          <div className="flex justify-between items-center px-6 py-3 bg-white shadow-sm rounded-lg border border-gray-200 hover:bg-gray-50">
-            <Link
-              className="text-xl hover:text-blue-600 hover:underline"
-              to="/controversial-comments"
-            >
+          <Link
+            className="text-xl hover:text-blue-600 hover:underline"
+            to="/controversial-comments"
+          >
+            <div className="flex justify-between items-center px-6 py-3 bg-white shadow-sm rounded-lg border border-gray-200 hover:bg-gray-50">
               Controversial Comments
-            </Link>
-          </div>
+            </div>
+          </Link>
         </div>
       </div>
     </main>

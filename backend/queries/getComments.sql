@@ -21,4 +21,4 @@ LEFT JOIN Comment c
 JOIN User u
 ON c.uid = u.uid
 WHERE d.executive_order_id = ?
-ORDER BY vote_score DESC;
+ORDER BY timestamp DESC;
