@@ -38,6 +38,24 @@ router.get("/search", (req, res) => {
   });
 });
 
+router.post("/pdfproxy", async (req, res) => {
+  const { url } = req.body;
+  try {
+    const response = await fetch(url);
+    console.log(response);
+    const arrayBuffer = await response.arrayBuffer();
+    const data = Buffer.from(arrayBuffer);
+    res.set("Access-Control-Allow-Origin", "*");
+    res.type("pdf");
+    res.status(200).send(data);
+  } catch (error) {
+    console.error("Error proxying PDF file:", error);
+    res.status(400).send({
+      message: "Error proxying pdf file",
+    });
+  }
+});
+
 router.get("/president/:president", (req, res) => {
   const president = presidentShorthandToDB[req.params.president];
 
