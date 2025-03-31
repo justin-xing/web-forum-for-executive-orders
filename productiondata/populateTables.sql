@@ -53,7 +53,8 @@ ALTER TABLE VoteFor
   ADD INDEX idx_vote_uid_cid_up (uid, cid, is_upvote);
 
 ALTER TABLE Document
-  ADD INDEX idx_document_president_tag_date (president, tag, signing_date);
+  ADD INDEX idx_document_president_tag_date (president, tag, signing_date),
+  ADD FULLTEXT(title);
 
 ALTER TABLE Comment
   ADD INDEX idx_comment_uid (uid),
