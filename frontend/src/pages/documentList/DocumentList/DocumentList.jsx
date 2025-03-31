@@ -42,12 +42,13 @@ const DocumentList = () => {
       <FormControl fullWidth>
         <InputLabel>Tag Filter</InputLabel>
         <Select value={tag} label="Tag" onChange={handleTagFilterChange}>
-          <MenuItem value=""></MenuItem>
+          <MenuItem value="">&nbsp;</MenuItem>
           <MenuItem value="Military">Military</MenuItem>
           <MenuItem value="Immigration">Immigration</MenuItem>
           <MenuItem value="Economics">Economics</MenuItem>
         </Select>
       </FormControl>
+      <div className="h-5"></div>
       <Stack
         spacing={2}
         sx={{ justifyContent: "center", alignItems: "center" }}
