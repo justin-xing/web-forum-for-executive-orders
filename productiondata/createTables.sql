@@ -43,7 +43,7 @@ CREATE TABLE Comment(
     timestamp              TIMESTAMP,
     FOREIGN KEY(uid) REFERENCES User(uid) ON DELETE CASCADE,
     FOREIGN KEY(executive_order_id) REFERENCES Document(executive_order_id) ON DELETE CASCADE
-);
+) ENGINE=InnoDB ROW_FORMAT=COMPRESSED;
 
 CREATE TABLE VoteFor(
     uid                    INT NOT NULL,
