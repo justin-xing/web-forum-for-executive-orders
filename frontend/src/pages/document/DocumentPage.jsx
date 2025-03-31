@@ -160,7 +160,7 @@ const DocumentPage = () => {
               <div>{document.president}</div>
             </div>
           </div>
-          {pdfUrl && (
+          {pdfUrl ? (
             <iframe
               src={pdfUrl}
               width="100%"
@@ -168,6 +168,12 @@ const DocumentPage = () => {
               style={{ border: "none" }}
               title="Document PDF"
             />
+          ) : (
+            <div>
+              <span className="text-lg font-semibold">
+                Missing PDF from government database.
+              </span>
+            </div>
           )}
         </div>
         <div className="w-1/3 pl-4">
