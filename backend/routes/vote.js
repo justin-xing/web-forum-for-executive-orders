@@ -14,14 +14,14 @@ router.post("/votes", (req, res) => {
   con.query(getVoteQuery, [uid, cid], (err, results) => {
     if (err) {
       console.error(err);
-      return res.status(400).send({ error: "Could not retrieve vote" });
+      return res.status(400).send({ message: "Could not retrieve vote" });
     }
 
     if (results.length > 0) {
       con.query(updateVoteQuery, [vote, uid, cid], (err) => {
         if (err) {
           console.error(err);
-          return res.status(400).send({ error: "Could not update vote" });
+          return res.status(400).send({ message: "Could not update vote" });
         }
         return res.status(200).send({ message: "Vote successfully updated" });
       });
@@ -29,7 +29,7 @@ router.post("/votes", (req, res) => {
       con.query(createVoteQuery, [vote, uid, cid], (err) => {
         if (err) {
           console.error(err);
-          return res.status(400).send({ error: "Could not create vote" });
+          return res.status(400).send({ message: "Could not create vote" });
         }
         return res.status(201).send({ message: "Vote successfully created" });
       });

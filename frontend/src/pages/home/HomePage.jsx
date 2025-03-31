@@ -26,7 +26,9 @@ const HomePage = () => {
 
   const handleSearch = async (e) => {
     e.preventDefault();
-    const res = await fetch(`/api/document/search?term=${encodeURIComponent(searchTerm)}`);
+    const res = await fetch(
+      `/api/document/search?term=${encodeURIComponent(searchTerm)}`
+    );
     const data = await res.json();
     setSearchResults(data.documents);
   };
@@ -62,8 +64,8 @@ const HomePage = () => {
           </button>
         </form>
       </div>
-      
-      {searchResults?.length > 0 && (
+
+      {searchResults?.length > 0 ? (
         <div className="mx-auto max-w-2xl mt-8 mb-4 px-4">
           <div className="text-2xl mb-2">Search Results</div>
           <div className="grid grid-cols-1 gap-4">
@@ -73,30 +75,37 @@ const HomePage = () => {
                 to={`/document/${doc.executive_order_id}`}
                 className="p-4 border border-gray-300 rounded-md hover:bg-gray-100"
               >
-                <h3 className="font-medium text-blue-600 hover:underline">{doc.title}</h3>
+                <h3 className="font-medium text-blue-600 hover:underline">
+                  {doc.title}
+                </h3>
                 <p className="text-sm text-gray-600">
-                  {doc.president} • {new Date(doc.signing_date).toLocaleDateString()} • {doc.tag}
+                  {doc.president} •{" "}
+                  {new Date(doc.signing_date).toLocaleDateString()} • {doc.tag}
                 </p>
               </Link>
             ))}
           </div>
         </div>
+      ) : (
+        <div className="mx-auto max-w-2xl  mb-4 px-4 italic text-gray-500">
+          No search results found.
+        </div>
       )}
-      
+
       <div className="flex flex-col items-center justify-center gap-4 my-8">
         <h2 className="text-2xl font-bold mb-2">Presidents by Engagement</h2>
         {loading ? (
           <div className="text-center">Loading president data...</div>
         ) : (
           <div className="w-full max-w-xl space-y-3">
-            {presidentScores.map((pres, i) => (
-              <div 
+            {presidentScores?.map((pres, i) => (
+              <div
                 key={i}
                 className="flex justify-between items-center px-6 py-3 bg-white shadow-sm rounded-lg border border-gray-200 hover:bg-gray-50"
               >
                 <Link
                   className="text-xl hover:text-blue-600 hover:underline"
-                  to={`/president/${pres.president.split(' ')[1]}`}
+                  to={`/president/${pres.president.split(" ")[1]}`}
                 >
                   {pres.president}
                 </Link>
@@ -107,7 +116,7 @@ const HomePage = () => {
             ))}
           </div>
         )}
-        
+
         <div className="w-full max-w-xl mt-4">
           <div className="flex justify-between items-center px-6 py-3 bg-white shadow-sm rounded-lg border border-gray-200 hover:bg-gray-50">
             <Link
@@ -118,7 +127,7 @@ const HomePage = () => {
             </Link>
           </div>
         </div>
-        
+
         <div className="w-full max-w-xl">
           <div className="flex justify-between items-center px-6 py-3 bg-white shadow-sm rounded-lg border border-gray-200 hover:bg-gray-50">
             <Link
