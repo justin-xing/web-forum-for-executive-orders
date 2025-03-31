@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { con } from "../server.js";
+import { conAdmin as con} from "../server.js";
 import fs from "fs";
 const router = Router();
 
