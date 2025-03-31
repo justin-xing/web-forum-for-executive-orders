@@ -19,6 +19,13 @@ app.use(express.json());
 
 export const con = mysql.createConnection({
   host: "localhost",
+  user: process.env.MYSQL_BASIC_USER,
+  password: process.env.MYSQL_BASIC_PASSWORD,
+  database: "testDB",
+});
+
+export const conAdmin = mysql.createConnection({
+  host: "localhost",
   user: process.env.MYSQL_USER,
   password: process.env.MYSQL_PASSWORD,
   database: "testDB",
@@ -26,7 +33,12 @@ export const con = mysql.createConnection({
 
 con.connect(function (err) {
   if (err) throw err;
-  console.log("Connected!");
+  console.log("Connected basic!");
+});
+
+conAdmin.connect(function (err) {
+  if (err) throw err;
+  console.log("Connected admin!");
 });
 
 app.use("/api/user", userRoute);
