@@ -7,6 +7,9 @@ const getCommentsQuery = fs.readFileSync("queries/getComments.sql").toString();
 const deleteCommentQuery = fs
   .readFileSync("queries/deleteComment.sql")
   .toString();
+const getControversialCommentsQuery = fs
+  .readFileSync("queries/getControversialComments.sql")
+  .toString();
 
 router.get("/comments/:executiveOrderId", (req, res) => {
   const executiveOrderId = req.params.executiveOrderId;
@@ -38,4 +41,17 @@ router.delete("/comments/:id", (req, res) => {
   });
 });
 
+router.get("/controversial-comments", (req, res) => {
+  con.query(getControversialCommentsQuery, function (err, results) {
+    if (err) {
+      console.log(err);
+      res.status(400).send({
+        message: "Could not retrieve controversial comments",
+      });
+    }
+    res.status(200).send({
+      comments: results,
+    });
+  });
+});
 export const commentRoute = router;

@@ -93,7 +93,15 @@ const HomePage = () => {
             Admin
           </Link>
         </div>
-      </div>
+        <div>
+          <Link
+            className="hover:cursor-pointer hover:underline hover:text-blue-400"
+            to="/controversial-comments"
+          >
+            Comments
+          </Link>
+        </div>
+      </div>      
     </main>
   );
 };

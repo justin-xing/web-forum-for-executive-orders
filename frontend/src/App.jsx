@@ -7,6 +7,7 @@ import AdminPage from "./pages/admin/AdminPage";
 import AuthProvider from "./context/AuthContext";
 import LoginPage from "./pages/login/LoginPage";
 import SignupPage from "./pages/signup/SignupPage";
+import ControversialComments from "./pages/comments/ControversialComments";
 
 function App() {
   const router = createBrowserRouter([
@@ -35,6 +36,10 @@ function App() {
         {
           path: "/signup",
           element: <SignupPage />,
+        },
+        {
+          path: "/controversial-comments",
+          element: <ControversialComments />,
         },
       ],
     },
