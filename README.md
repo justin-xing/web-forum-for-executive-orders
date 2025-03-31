@@ -32,7 +32,6 @@ GRANT SELECT, INSERT, UPDATE ON testDB.Comment TO 'basicusr'@'localhost';
 GRANT SELECT, INSERT, UPDATE ON testDB.VoteFor TO 'basicusr'@'localhost';
 GRANT SELECT, INSERT, UPDATE ON testDB.User TO 'basicusr'@'localhost';
 GRANT SELECT ON testDB.Document TO 'basicusr'@'localhost';
-REVOKE DELETE ON testDB.User FROM 'basicusr'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
