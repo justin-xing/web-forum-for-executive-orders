@@ -111,13 +111,32 @@ const DocumentPage = () => {
 
   return (
     <div className={styles.documentPage}>
-      <div>EID: {executive_order_id}</div>
-      <div>Title: {document.title}</div>
-      <div>Signing Date: {document.signing_date}</div>
-      <div>
-        PDF: <a href={document.pdf_url}>{document.pdf_url}</a>
+      <div className="bg-white rounded-md shadow-md p-4 mb-4 border border-gray-300">
+        <div className="flex items-center mb-2">
+          <div className="bg-gray-200 rounded-full h-8 w-8 flex items-center justify-center mr-2">
+            EID
+          </div>
+          <div className="font-semibold text-lg">{executive_order_id}</div>
+        </div>
+        <div className="mb-2">
+          <div className="font-semibold">Title:</div>
+          <div>{document.title}</div>
+        </div>
+        <div className="mb-2">
+          <div className="font-semibold">Signing Date:</div>
+          <div>{new Date(document.signing_date).toLocaleDateString()}</div>
+        </div>
+        <div className="mb-2">
+          <div className="font-semibold">PDF:</div>
+          <a href={document.pdf_url} className="text-blue-600 hover:underline">
+            {document.pdf_url}
+          </a>
+        </div>
+        <div>
+          <div className="font-semibold">Signed By:</div>
+          <div>{document.president}</div>
       </div>
-      <div>Signed By: {document.president}</div>
+    </div>
       <b>Comments</b>
       <CommentInput executiveOrderId={executive_order_id}/>
       <div className="h-5"></div>
