@@ -2,19 +2,26 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const HomePage = () => {
-  // REPLACE: request query for unique presidents
-
-  const [presidents, setPresidents] = useState([]);
+  const [presidentScores, setPresidentScores] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchPresidents = async () => {
-      const res = await fetch("/api/president");
-      const data = await res.json();
-      setPresidents(data.presidents);
+    const fetchPresidentScores = async () => {
+      try {
+        setLoading(true);
+        const res = await fetch("/api/president/relevance-score");
+        const data = await res.json();
+        setPresidentScores(data.presidents);
+      } catch (error) {
+        console.error("Error fetching president scores:", error);
+      } finally {
+        setLoading(false);
+      }
     };
-    fetchPresidents();
+
+    fetchPresidentScores();
   }, []);
 
   const handleSearch = async (e) => {
@@ -55,6 +62,7 @@ const HomePage = () => {
           </button>
         </form>
       </div>
+      
       {searchResults?.length > 0 && (
         <div className="mx-auto max-w-2xl mt-8 mb-4 px-4">
           <div className="text-2xl mb-2">Search Results</div>
@@ -75,33 +83,53 @@ const HomePage = () => {
         </div>
       )}
       
-      <div className="flex gap-10 justify-center text-2xl">
-        {presidents.map((pres, i) => (
-          <Link
-            className="hover:cursor-pointer hover:underline hover:text-blue-400"
-            key={i}
-            to={`/president/${pres}`}
-          >
-            {pres}
-          </Link>
-        ))}
-        <div>
-          <Link
-            className="hover:cursor-pointer hover:underline hover:text-blue-400"
-            to="/admin"
-          >
-            Admin
-          </Link>
+      <div className="flex flex-col items-center justify-center gap-4 my-8">
+        <h2 className="text-2xl font-bold mb-2">Presidents by Engagement</h2>
+        {loading ? (
+          <div className="text-center">Loading president data...</div>
+        ) : (
+          <div className="w-full max-w-xl space-y-3">
+            {presidentScores.map((pres, i) => (
+              <div 
+                key={i}
+                className="flex justify-between items-center px-6 py-3 bg-white shadow-sm rounded-lg border border-gray-200 hover:bg-gray-50"
+              >
+                <Link
+                  className="text-xl hover:text-blue-600 hover:underline"
+                  to={`/president/${pres.president.split(' ')[1]}`}
+                >
+                  {pres.president}
+                </Link>
+                <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                  {pres.relevance_score} interactions
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+        
+        <div className="w-full max-w-xl mt-4">
+          <div className="flex justify-between items-center px-6 py-3 bg-white shadow-sm rounded-lg border border-gray-200 hover:bg-gray-50">
+            <Link
+              className="text-xl hover:text-blue-600 hover:underline"
+              to="/admin"
+            >
+              Admin
+            </Link>
+          </div>
         </div>
-        <div>
-          <Link
-            className="hover:cursor-pointer hover:underline hover:text-blue-400"
-            to="/controversial-comments"
-          >
-            Comments
-          </Link>
+        
+        <div className="w-full max-w-xl">
+          <div className="flex justify-between items-center px-6 py-3 bg-white shadow-sm rounded-lg border border-gray-200 hover:bg-gray-50">
+            <Link
+              className="text-xl hover:text-blue-600 hover:underline"
+              to="/controversial-comments"
+            >
+              Controversial Comments
+            </Link>
+          </div>
         </div>
-      </div>      
+      </div>
     </main>
   );
 };
