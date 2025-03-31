@@ -63,39 +63,42 @@ const DocumentPage = () => {
     return (
       <div
         key={i}
-        style={{ borderWidth: 1, borderColor: "black", borderStyle: "solid" }}
-        className="flex justify-between items-center p-2"
+        className="flex justify-between items-start p-4 mb-4 border rounded shadow-md"
       >
         <div>
-          <div>User: {comment.username}</div>
-          <div>Timestamp: {comment.timestamp}</div>
-          <div>Message: {comment.message}</div>
-          <div>Vote score: {comment.vote_score}</div>
+          <div className="font-semibold">{comment.username}</div>
+          <div className="text-sm text-gray-500">
+            {new Date(comment.timestamp).toLocaleString()}
+          </div>
+          <div className="mt-2">{comment.message}</div>
+          <div className="mt-2">Vote score: {comment.vote_score}</div>
           {user && (
-            <div className="flex gap-2">
-              <div className="flex items-center gap-1">
+            <div className="flex items-center mt-2 gap-4">
+              <div className="flex items-center gap-2">
                 <button
-                  className="hover:cursor-pointer"
+                  className="text-blue-500 hover:text-blue-700"
                   onClick={() => vote(1, comment.uid, comment.cid)}
                 >
                   <ThumbUpIcon />
                 </button>
-                <div>{comment.upvotes}</div>
+                <span>{comment.upvotes}</span>
               </div>
-              <button
-                className="hover:cursor-pointer"
-                onClick={() => vote(0, comment.uid, comment.cid)}
-              >
-                <ThumbDownIcon />
-              </button>
-              <div>{comment.downvotes}</div>
+              <div className="flex items-center gap-2">
+                <button
+                  className="text-red-500 hover:text-red-700"
+                  onClick={() => vote(0, comment.uid, comment.cid)}
+                >
+                  <ThumbDownIcon />
+                </button>
+                <span>{comment.downvotes}</span>
+              </div>
             </div>
           )}
         </div>
-        {user && user.role === "admin" && (
-          <div>
+        {user && user.role === 'admin' && (
+          <div className="self-start">
             <button
-              className="hover:cursor-pointer"
+              className="text-red-600 hover:text-red-800"
               onClick={() => deleteComment(comment.cid)}
             >
               <HighlightOffIcon />
@@ -117,6 +120,7 @@ const DocumentPage = () => {
       <div>Signed By: {document.president}</div>
       <b>Comments</b>
       <CommentInput executiveOrderId={executive_order_id}/>
+      <div className="h-5"></div>
       {Comments}
     </div>
   );
