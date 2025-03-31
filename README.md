@@ -19,6 +19,28 @@ mysql> source "**FULL PATH TO outputTables.sql**"
 
 Create an admin user you will use to connect to the database in the application:
 
+First, check your MySQL Authentication Plugin:
+
+```
+SELECT user, host, plugin FROM mysql.user WHERE user = 'apiusr';
+```
+
+If your MySQL server is running `mysql_native_password`, run the following:
+
+```
+mysql> CREATE USER 'apiusr'@'localhost' IDENTIFIED BY 'password';
+mysql> GRANT ALL ON *.* to 'apiusr'@'localhost';
+mysql> ALTER USER 'apiusr'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+```
+
+If your MySQL server is running `caching_sha2_password`, run the following:
+
+```
+mysql> CREATE USER ’apiusr’@’localhost’ IDENTIFIED BY ’password’;
+mysql> GRANT ALL ON *.* to ’apiusr’@’localhost’;
+mysql> ALTER USER 'apiusr'@'localhost' IDENTIFIED BY 'password';
+```
+
 ```
 mysql> CREATE USER ’apiusr’@’localhost’ IDENTIFIED BY ’password’;
 mysql> GRANT ALL ON *.* to ’apiusr’@’localhost’;
@@ -26,6 +48,7 @@ mysql> ALTER USER ’apiusr’@’localhost’ IDENTIFIED WITH mysql_native_pass
 ```
 
 Create a basic restricted user you will use to connect to the database in the application:
+
 ```
 CREATE USER 'basicusr'@'localhost' IDENTIFIED BY 'password';
 GRANT SELECT, INSERT, UPDATE ON testDB.Comment TO 'basicusr'@'localhost';
@@ -66,25 +89,6 @@ mysql --local-infile=1 -u root -p -D testDB
 mysql> source "**FULL PATH TO createTables.sql**"
 mysql> source "**FULL PATH TO populateTables.sql**"
 mysql> source "**FULL PATH TO outputTables.sql**"
-```
-
-Create an admin user you will use to connect to the database in the application:
-
-```
-mysql> CREATE USER ’apiusr’@’localhost’ IDENTIFIED BY ’password’;
-mysql> GRANT ALL ON *.* to ’apiusr’@’localhost’;
-mysql> ALTER USER ’apiusr’@’localhost’ IDENTIFIED WITH mysql_native_password BY ’password’;
-```
-
-Create a basic restricted user you will use to connect to the database in the application:
-```
-CREATE USER 'basicusr'@'localhost' IDENTIFIED BY 'password';
-GRANT SELECT, INSERT, UPDATE ON testDB.Comment TO 'basicusr'@'localhost';
-GRANT SELECT, INSERT, UPDATE ON testDB.VoteFor TO 'basicusr'@'localhost';
-GRANT SELECT, INSERT, UPDATE ON testDB.User TO 'basicusr'@'localhost';
-GRANT SELECT ON testDB.Document TO 'basicusr'@'localhost';
-REVOKE DELETE ON testDB.User FROM 'basicusr'@'localhost';
-FLUSH PRIVILEGES;
 ```
 
 ## How to run backend locally
