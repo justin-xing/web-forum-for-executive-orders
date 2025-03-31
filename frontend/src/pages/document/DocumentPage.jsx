@@ -112,7 +112,7 @@ const DocumentPage = () => {
             </div>
           )}
         </div>
-        {user && user.role === 'admin' && (
+        {user && user.role === "admin" && (
           <div className="self-start">
             <button
               className="text-red-600 hover:text-red-800"
@@ -131,32 +131,35 @@ const DocumentPage = () => {
       <div className="flex">
         <div className="w-2/3 pr-4">
           <div className="bg-white rounded-md shadow-md p-4 mb-4 border border-gray-300">
-        <div className="flex items-center mb-2">
-          <div className="bg-gray-200 rounded-full h-8 w-8 flex items-center justify-center mr-2">
-            EID
-          </div>
-          <div className="font-semibold text-lg">{executive_order_id}</div>
+            <div className="flex items-center mb-2">
+              <div className="bg-gray-200 rounded-full h-8 w-8 flex items-center justify-center mr-2">
+                EID
+              </div>
+              <div className="font-semibold text-lg">{executive_order_id}</div>
             </div>
-        <div className="mb-2">
-          <div className="font-semibold">Title:</div>
-          <div>{document.title}</div>
+            <div className="mb-2">
+              <div className="font-semibold">Title:</div>
+              <div>{document.title}</div>
             </div>
-        <div className="mb-2">
-          <div className="font-semibold">Signing Date:</div>
-          <div>{new Date(document.signing_date).toLocaleDateString()}</div>
+            <div className="mb-2">
+              <div className="font-semibold">Signing Date:</div>
+              <div>{new Date(document.signing_date).toLocaleDateString()}</div>
             </div>
-        <div className="mb-2">
-          <div className="font-semibold">PDF:</div>
-          <a href={document.pdf_url} className="text-blue-600 hover:underline">
-            {document.pdf_url}
-          </a>
-        </div>
-        <div>
+            <div className="mb-2">
+              <div className="font-semibold">PDF:</div>
+              <a
+                href={document.pdf_url}
+                className="text-blue-600 hover:underline"
+              >
+                {document.pdf_url}
+              </a>
+            </div>
+            <div>
               <div className="font-semibold">Signed By:</div>
-          <div>{document.president}</div>
+              <div>{document.president}</div>
+            </div>
           </div>
-        </div>
-          {pdfUrl && (
+          {pdfUrl ? (
             <iframe
               src={pdfUrl}
               width="100%"
@@ -164,13 +167,19 @@ const DocumentPage = () => {
               style={{ border: "none" }}
               title="Document PDF"
             />
+          ) : (
+            <div>
+              <span className="text-lg font-semibold">
+                Missing PDF from government database.
+              </span>
+            </div>
           )}
         </div>
         <div className="w-1/3 pl-4">
           <b>Comments</b>
           <CommentInput executiveOrderId={executive_order_id} />
           <div className="h-5"></div>
-      {Comments}
+          {Comments}
         </div>
       </div>
     </div>
