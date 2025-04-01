@@ -8,6 +8,7 @@ import AuthProvider from "./context/AuthContext";
 import LoginPage from "./pages/login/LoginPage";
 import SignupPage from "./pages/signup/SignupPage";
 import ControversialComments from "./pages/comments/ControversialComments";
+import DocumentForm from "./pages/documentList/DocumentCreate/DocumentCreate";
 
 function App() {
   const router = createBrowserRouter([
@@ -41,6 +42,10 @@ function App() {
           path: "/controversial-comments",
           element: <ControversialComments />,
         },
+        {
+          path: "/create_document",
+          element: <DocumentForm/>
+        }
       ],
     },
   ]);

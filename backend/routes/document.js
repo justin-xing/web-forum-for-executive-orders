@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { con } from "../server.js";
+import { con, conAdmin } from "../server.js";
 import fs from "fs";
 const router = Router();
 
@@ -94,6 +94,23 @@ router.get("/:eid", (req, res) => {
     res.status(200).send({
       document: results[0],
     });
+  });
+});
+
+router.post('/', (req, res) => {
+  const { user_id, pdf_url, citation, start_page, end_page, title, signing_date, publication_date, tag, president } = req.body;
+
+  if (!user_id || !pdf_url || !title) {
+      return res.status(400).json({ error: 'Missing required fields' });
+  }
+
+  const sql = 'INSERT INTO Document (user_id, pdf_url, citation, start_page, end_page, title, signing_date, publication_date, tag, president) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+  conAdmin.query(sql, [user_id, pdf_url, citation, start_page, end_page, title, signing_date, publication_date, tag, president], (err, result) => {
+      if (err) {
+          console.error('Database query error: ' + err.stack);
+          return res.status(500).json({ error: 'Database error' });
+      }
+      res.json({ message: 'Document created successfully', insertId: result.insertId });
   });
 });
 

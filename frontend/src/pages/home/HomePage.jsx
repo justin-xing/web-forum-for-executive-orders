@@ -113,7 +113,22 @@ const HomePage = () => {
           </div>
         )}
 
+        <h2 className="text-2xl font-bold mb-2 mt-4">User Highlights</h2>
+
         <div className="w-full max-w-xl mt-4">
+          <div className="flex justify-between items-center px-6 py-3 bg-white shadow-sm rounded-lg border border-gray-200 hover:bg-gray-50">
+            <Link
+              className="text-xl hover:text-blue-600 hover:underline"
+              to="/controversial-comments"
+            >
+              Top Controversial Comments
+            </Link>
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-bold mb-2 mt-4">Admin Tools</h2>
+
+        <div className="w-full max-w-xl">
           <Link
             className="text-xl hover:text-blue-600 hover:underline"
             to="/admin"
@@ -127,10 +142,10 @@ const HomePage = () => {
         <div className="w-full max-w-xl">
           <Link
             className="text-xl hover:text-blue-600 hover:underline"
-            to="/controversial-comments"
+            to="/create_document"
           >
             <div className="flex justify-between items-center px-6 py-3 bg-white shadow-sm rounded-lg border border-gray-200 hover:bg-gray-50">
-              Controversial Comments
+              Create Document
             </div>
           </Link>
         </div>
