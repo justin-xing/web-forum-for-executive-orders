@@ -1,3 +1,7 @@
+SELECT *
+FROM Document
+WHERE executive_order_id=14159;
+
 SELECT u.username, c.cid, c.timestamp, c.message, (
 SELECT count(uid)
 FROM VoteFor

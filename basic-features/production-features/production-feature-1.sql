@@ -1,4 +1,8 @@
 SELECT *
 FROM Document
 WHERE president = 'Donald Trump'
-  AND tag = 'Immigration';
+AND tag = 'Immigration';
+
+SELECT *
+FROM Document
+WHERE president='Donald Trump';

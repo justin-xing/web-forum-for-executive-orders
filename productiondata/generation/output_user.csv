@@ -1,5 +1,5 @@
 uid,name,username,location,role,password_hash,email,gender,account_creation_date,date_of_birth,profile_picture_url,bio
-1,Jennifer,linda53,Waterloo,regular,[?v'P:|y41,dianavelazquez@example.com,Female,2024-04-18 11:06:52,1999-04-04,https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341,i am jennifer. me like politics
+1,Jennifer,linda53,Waterloo,admin,[?v'P:|y41,dianavelazquez@example.com,Female,2024-04-18 11:06:52,1999-04-04,https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341,i am jennifer. me like politics
 2,Derek,sheabenjamin,Quebec City,regular,MMjY>a2sWj,dennissmith@example.org,Female,2024-06-06 18:12:20,2005-08-20,https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341,i am derek. me like politics
 3,Stephanie,emilyrobinson,Hamilton,regular,X/e\/hUk.I,rmolina@example.org,Male,2024-11-05 13:35:26,1991-01-27,https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341,i am stephanie. me like politics
 4,Justin,foxconnie,Vancouver,regular,?1cQpdn0z{,cnewton@example.org,Female,2025-02-24 19:21:53,1960-07-28,https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341,i am justin. me like politics
