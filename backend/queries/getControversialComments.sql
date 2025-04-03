@@ -1,4 +1,3 @@
--- Create a view to count upvotes and downvotes for each comment
 WITH VoteCounts AS (
     SELECT cid, SUM(CASE WHEN is_upvote = TRUE THEN 1 ELSE 0 END) AS upvotes, SUM(CASE WHEN is_upvote = FALSE THEN 1 ELSE 0 END) AS downvotes
     FROM VoteFor
