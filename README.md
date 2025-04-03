@@ -146,3 +146,4 @@ Each feature can be found implemented in the appropriate frontend page and backe
 - Lossless compression on Comment table
 - Generation of sample/production data, creation and population of tables
 - Indexing on tables as detailed in report
+- Appropriate delete cascades on ex. user delete
