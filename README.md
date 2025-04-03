@@ -130,10 +130,20 @@ npm run dev
 
 The frontend server should be running on http://localhost:5173/
 
-## Features implemented so far
-
-Note: associated query file paths can be found in the imports of the respective backend route files. You can also find them in the **basic-features** folder.
-
-- Retrieving all documents per president, which can be filtered based on tag (Basic Feature 1). Backend endpoint can be found at **backend/routes/document.js**. Frontend page can be found at **frontend/.../pages/.../DocumentList.jsx**.
-- Upon clicking on a document, its details are retrieved and displayed, and all comments associated with the document are retrieved and displayed (Basic Feature 2). Backend endpoint can be found at **backend/routes/comment.js**. Frontend page can be found at **frontend/.../pages/DocumentPage.jsx**.
-- Admin panel to display all users and allow for the deletion of a user (Basic Feature 3). Backend endpoint can be found at **backend/routes/user.js**. Frontend page can be found at **frontend/.../pages/.../AdminPage.jsx**.
+## Features implemented
+Each feature can be found implemented in the appropriate frontend page and backend router pertaining to the affected table (ex. For features affecting the Document table, DocumentList.js in pages folder, document.js in routes folder). 
+- Viewing, creation, deletion, editing of users with Basic and Admin roles
+- Users have their permissions to view pages/use routes based on their role
+- Different levels of DB-level users to further safeguard against unintentional allowance of admin-level queries in basic user features
+- Viewing, creation of documents
+- Viewing, creation, and deletion of comments
+- Creation and updating of votes on specific comments
+- Auto liking your own comment on creation using transaction for atomicity
+- Viewing presidents in the database sorted by relevance score
+- Viewing most controversial comments
+- Filtering documents based on tag
+- Searching for documents based on keyword search of title
+- Lossless compression on Comment table
+- Generation of sample/production data, creation and population of tables
+- Indexing on tables as detailed in report
+- Appropriate delete cascades on ex. user delete
