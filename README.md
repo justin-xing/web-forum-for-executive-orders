@@ -51,8 +51,8 @@ Create a basic restricted user you will use to connect to the database in the ap
 
 ```
 CREATE USER 'basicusr'@'localhost' IDENTIFIED BY 'password';
-GRANT SELECT, INSERT, UPDATE ON testDB.Comment TO 'basicusr'@'localhost';
-GRANT SELECT, INSERT, UPDATE ON testDB.VoteFor TO 'basicusr'@'localhost';
+GRANT SELECT, INSERT, UPDATE, DELETE ON testDB.Comment TO 'basicusr'@'localhost';
+GRANT SELECT, INSERT, UPDATE, DELETE ON testDB.VoteFor TO 'basicusr'@'localhost';
 GRANT SELECT, INSERT, UPDATE ON testDB.User TO 'basicusr'@'localhost';
 GRANT SELECT ON testDB.Document TO 'basicusr'@'localhost';
 FLUSH PRIVILEGES;
