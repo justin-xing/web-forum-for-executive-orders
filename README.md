@@ -1,4 +1,4 @@
-# Forum for American Executive Orders
+# Web Forum to discuss American Executive Orders
 
 
 ## How to create and load the sample database
