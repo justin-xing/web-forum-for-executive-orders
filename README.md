@@ -1,4 +1,5 @@
-# CS348_W25_Project
+# Forum for American Executive Orders
+
 
 ## How to create and load the sample database
 
